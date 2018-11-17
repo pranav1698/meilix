@@ -32,6 +32,9 @@ cat /usr/share/applications/defaults.list | grep video
 
 ## Other
 
+xdg-settings --list
+
+update-alternatives --display x-session-manager
 update-alternatives --get-selections 
 
 # Plymouth themes
@@ -46,6 +49,13 @@ ls /usr/share/xsessions/
 cat /usr/share/xsessions/lxqt.desktop
 ls /usr/local/share/xsessions
 
+# Do lxsession files exist?
+ls /usr/bin/lx*
+
+# What files are installed by LXQT?
+apt-get install apt-file
+apt-file update
+apt-file list lxqt
 
 # Just for Test purposes
 
