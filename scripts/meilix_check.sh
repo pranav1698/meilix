@@ -73,6 +73,7 @@ echo Skript 25
 less /usr/share/initramfs-tools/scripts/casper-bottom/25adduser
 echo Skript 15
 cat /usr/share/initramfs-tools/scripts/casper-bottom/15autologin
+sed -i 's\plasma.desktop\lxqt.desktop\g' /usr/share/initramfs-tools/scripts/casper-bottom/15autologin
 echo end passphrase section
 
 # passwords of user accounts 
