@@ -17,7 +17,7 @@ include:
       - fakeroot
       - devscripts
 sudo: required
-dist: xenial
+dist: bionic
 git:
   depth: 22
 script:
