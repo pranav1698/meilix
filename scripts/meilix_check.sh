@@ -52,11 +52,6 @@ ls /usr/local/share/xsessions
 # Do lxsession files exist?
 ls /usr/bin/lx*
 
-# What files are installed by LXQT?
-apt-get install apt-file
-apt-file update
-apt-file list lxqt
-
 # Just for Test purposes
 
 #cat conf/arch.conf
