@@ -10,7 +10,7 @@ sudo chroot chroot <<EOF
 # Set up several useful shell variables
 export CASPER_GENERATE_UUID=1
 export HOME=/root
-#export USERNAME=meilix
+export USERNAME=meilix
 export TTY=unknown
 export TERM=vt100
 export DEBIAN_FRONTEND=noninteractive
