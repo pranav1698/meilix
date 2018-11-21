@@ -7,7 +7,7 @@
  
 A beautiful and customizable Linux build for out of the box features for an Internet Kiosk. You can use the Meilix Generator (Web app) to make a Linux for your own brand/event, also add apps and features you need pre-installed, it will create an ISO Image of your Linux, which you can use as a live boot or install on PCs. 
 
-`Meilix is under heavy development`
+`Meilix is under heavy development. It is in alpha`stage and not recommended for productive use.
 
 # Index
 
@@ -37,44 +37,12 @@ This project serves as a solution for those who wish to have a pre-configured cu
 
 ### Feature
 
-Meilix is a light weight, beautiful and fast Linux with all the features of Ubuntu/Debian distro. Following are some of the other features that Meilix offers:
-
-- You can brand your Linux as you want. Your company name and logo can be your:
-    - Linux name
-    - Linux logo
-    - Wallpaper
-    - Screensaver
-
-- Switch on/off various features of your linux. You can switch: 
-    - 64 Bit support (32 Bit is default)
-    - Notifications
-    - Screensaver
-    - Sleep Modes 
-    - System Sounds
-    - Bookmarks
-    - Screen Dimming
-    - Power Management Saving 
-    - Taskbar Autohide
-
-- Following apps can be pre-installed in your linux: 
-    - Chromium
-    - Firefox
-    - Hangout
-    - VLC
-    - GIMP
-    - Inkscape
-    - LibreOffice
-    - Git
-    - NextCloud
-    - Dropbox
-
-- Add all the documents and files you need in your linux.
-- System Lock: it allows you to freeze all the systems you are hosting using Meilix. 
+Meilix is a light weight, beautiful and fast Linux with all the features of Ubuntu/Debian distro. Custom Meilix builds are commissioned by the Meilix-generator web app.
 
 
 ### Architecture
 
-Meilix is based on Ubuntu/Debian architecture, using LXQT as the standard DE(Desktop Environment).
+Meilix is based on Ubuntu/Debian architecture. Meilix uses LXQT as the standard Desktop Environment.
 
 ### Ecosystem
 
@@ -98,7 +66,7 @@ Here are some pre-requisites to develop Meilix.
 - Experience in working with a UNIX or GNU/Linux based system. 
 - Basic understanding of Operating System and Package managers. 
 - Programming/Scripting experience. Shell Scripting etc.
-- LPIC1 is a huge plus
+- [LPIC1](https://en.wikipedia.org/wiki/Linux_Professional_Institute_Certification_Programs#LPIC-1) is a huge plus
 
 ## Development 
 
@@ -138,10 +106,6 @@ Basic understanding of the file structure is required to do development, here is
 ├── mail-scripts
 │   ├── mail-fail.py
 │   └── mail.py
-├── meilix-artwork
-│   ├── debian/...
-│   ├── Makefile/...
-│   └── usr/...
 ├── systemlock-0.1
 │   ├── debian/...
 │   ├── etc/...
@@ -203,8 +167,9 @@ $ chmod +x ./build.sh
 ```console
 $ ./build.sh
 ```
-### Testing 
+### Testing the ISOs
 1. [Local Installation with Qemu/KVM](/docs/run_meilix_with_qemu.md)
+2. Run as a live CD in Virtualbox by Oracle
 
 **Build Using Travis***
 
@@ -245,16 +210,15 @@ Meilix uses an agile continuous integration methodology, so the version is frequ
 
 1. **`Master`** is the development branch. It should always built.
 
-2. **`Generator`** is a legacy branch we keep for reference for the time being.
+2. **`Generator`** is a legacy branch we keep for reference for the time being. It chrooted a master branch ISO release and made changes as requested by the meilix-generator app and repackaged the customized ISO.
 
 3. No further branches should be created in the main repository.
 
 **Steps to create a pull request**
 
-1. Make a PR to `master` or any other feature branch only. 
-2. Where the PR concerns visual elements it should have an image showing the effect.
-3. Your code should meet the best practices and guidelines. 
-4. It must pass all CI tests and get positive reviews.
+1. Make a PR to `master` branch. 
+2. Comply with the best practices and guidelines e.g. where the PR concerns visual elements it should have an image showing the effect.
+3. It must pass all continuous integration checks and get positive reviews.
 
 After this, changes will be merged.
 
@@ -264,7 +228,7 @@ After this, changes will be merged.
 
 - Make sure your commit message is crisp and clear, read more about it [here](https://chris.beams.io/posts/git-commit/)
 - When refering to a issue in PR, use [special words](https://help.github.com/articles/closing-issues-using-keywords/) to automatically close the related issue like "Fixes #234"
-- Keep each PR very short, which will make it easy to review. 
+- Keep each PR very short, which will make it easy to review and correct.
 
 **Code**
 
@@ -277,7 +241,6 @@ After this, changes will be merged.
 - [Meilix Blogs](https://blog.fossasia.org/tag/meilix/page/5/)
 - [André Talk](https://www.youtube.com/watch?v=PaGtdc1EFRw)
 - [Tarun Talk](https://www.youtube.com/watch?v=iG4fgZlmdb4)
-
 
 ## Gallery 
 

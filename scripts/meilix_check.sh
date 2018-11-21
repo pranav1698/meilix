@@ -19,7 +19,7 @@ update-alternatives --display x-www-browser
 # ----- default file associations for Video -----
 # Expected VLC
 
-cat /usr/share/applications/defaults.list | grep video
+#cat /usr/share/applications/defaults.list | grep video
 
 # use xdg-mime to set default mimetype(s)
 
@@ -63,6 +63,7 @@ ls /usr/bin/lx*
 
 # Just for Test purposes
 
+ls conf
 #cat conf/arch.conf
 #cat conf/uuid.conf
 #cat conf/initramfs.conf
@@ -71,11 +72,12 @@ ls /usr/bin/lx*
 
 ls /usr/share/xsessions/ 
 echo passphrase section
-ls /usr/share/initramfs-tools/scripts/casper
+cat /usr/share/initramfs-tools/scripts/casper
 ls /usr/share/initramfs-tools/scripts/casper-bottom/
-echo Skript 25
+less /etc/casper.conf
+
 less /usr/share/initramfs-tools/scripts/casper-bottom/25adduser
-echo Skript 15
+less /usr/share/initramfs-tools/scripts/casper-bottom/24preseed
 cat /usr/share/initramfs-tools/scripts/casper-bottom/15autologin
 sed -i 's\plasma.desktop\lxqt.desktop\g' /usr/share/initramfs-tools/scripts/casper-bottom/15autologin
 echo end passphrase section

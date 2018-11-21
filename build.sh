@@ -1,6 +1,6 @@
 #!/bin/bash
 # build.sh -- creates an Meilix LiveCD ISO
-# Author: Team
+# Author: members of the meilix Team 
 # Based on HOWTO information by Julien Lavergne <gilir@ubuntu.com>
 
 set -eux				# Be strict
@@ -8,8 +8,6 @@ set -eux				# Be strict
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
-# just a test
-export USERNAME="meilix"
 # Parameters: arch mirror gnomelanguage release
 
 # Arch to build ISO for, i386 or amd64
@@ -83,8 +81,6 @@ wget https://github.com/fossasia/meilix-artwork/raw/deb/plymouth-theme-meilix-te
 # arch, release, mirror as set above.
 sudo debootstrap --arch=${arch} ${release} chroot ${mirror} #2>&1 |grep -v "^I: "
 
-echo now
-
 # Use /etc/resolv.conf from the host machine during the build
 sudo cp -vr /etc/resolvconf chroot/etc/resolvconf
 
@@ -145,11 +141,35 @@ sudo \cp --verbose -rf chroot/boot/initrd.img-**-generic image/casper/initrd.lz
   cp image/casper/initrd.lz initrd_FILES/initrd.lz && \
   cd initrd_FILES && \
   initramfs-extract initrd.lz -v && \
+  ls && \
   cd ..  && \
   cp initrd_FILES/conf/uuid.conf image/.disk/casper-uuid-generic && \
   rm -R initrd_FILES/
   
+# Now we change the LIVE-CDs default user name to meilix!
+# If this one line file exists within the unpacked lzma, Casper will take 
+# the default username and hostname for the live CD from the first word 
+# in this file and then will write it to casper.conf. If your default login
+# of your live cd is livecd just replace livecd by meilix. Below we change 
+# typical values for lzma images.
+# If you want to set username other than hostname this file should 
+# be empty and you set username and hostname via casper.conf. (André R)
+[ -f image/.disk/info ] && \
+sed -i 's/Lubuntu/meilix/' image/.disk/info && \
+sed -i 's/Xubuntu/meilix/' image/.disk/info && \
+sed -i 's/Ubuntu/meilix/' image/.disk/info && \
+sed -i 's/Kubuntu/meilix/' image/.disk/info
+# Lines above follow KISS to make it easy to grasp for you. Refactor at will.
 
+# What follows is a hackish patch for an older lzma image. It was updated 
+# in a wrong way to a more current version and should be dead code as it stands.
+# We replace by "newversion" that could also be "release".
+# Check the contents of affected files such as: 
+ls image/isolinux/f1.txt
+# and rectify the lines below (AR).
+# The hack applied when you took a old kernel lzma image for a new version
+# ISSUE in the tracker is 337
+# All the best, André
 # Fix old version and date info in .hlp files
 newversion=$(date -u +%y.%m) # Should be derived from releasename $4 FIXME
 for oldversion in 17.08
@@ -179,6 +199,7 @@ do
     sudo sed -i "/${i}/d" image/casper/filesystem.manifest-desktop
 done
 
+# What we installed in our chroot file system.
 # Now squash the live filesystem
 echo "$0: Starting mksquashfs at $(date -u) ..."
 sudo mksquashfs chroot image/casper/filesystem.squashfs -noappend -no-progress
@@ -238,8 +259,5 @@ chmod 0444 ../$ISOFILE
 # Create the associated md5sum file
 cd ..
 md5sum $ISOFILE >${ISOFILE}.md5
-
-#Show how much space the build process uses *fun*
-du -hs .
 
 # see travis confguration for the deployment that follows in case of a Travis build. 
