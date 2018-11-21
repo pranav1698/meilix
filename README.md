@@ -1,13 +1,13 @@
 # Meilix
-<p align="center">
-    <img src="./static/logo_readme.png" width="160">
-</p><br><br>
+<p>
+    <img align= "left" src="./docs/logo_readme.png" width="160">
+    A beautiful and customizable Linux build for out of the box features for an Internet Kiosk. You can use the Meilix Generator (Web app) to make a Linux for your own brand/event, also add apps and features you need pre-installed, it will create an ISO Image of your Linux, which you can use as a live boot or install on PCs. 
+</p><br>
 
 [![Join the chat at https://gitter.im/fossasia/meilix](https://badges.gitter.im/fossasia/meilix.svg)](https://gitter.im/fossasia/meilix?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Build Status](https://travis-ci.org/fossasia/meilix.svg?branch=master)](https://travis-ci.org/fossasia/meilix)
  
-A beautiful and customizable Linux build for out of the box features for an Internet Kiosk. You can use the Meilix Generator (Web app) to make a Linux for your own brand/event, also add apps and features you need pre-installed, it will create an ISO Image of your Linux, which you can use as a live boot or install on PCs. 
 
-`Meilix is under heavy development. It is in alpha`stage and not recommended for productive use.
+`Meilix is under heavy development. It is in alpha stage and not yet recommended for productive use.`
 
 # Index
 
@@ -39,7 +39,6 @@ This project serves as a solution for those who wish to have a pre-configured cu
 
 Meilix is a light weight, beautiful and fast Linux with all the features of Ubuntu/Debian distro. Custom Meilix builds are commissioned by the Meilix-generator web app.
 
-
 ### Architecture
 
 Meilix is based on Ubuntu/Debian architecture. Meilix uses LXQT as the standard Desktop Environment.
@@ -50,9 +49,10 @@ Following are the other projects/dependency part of Meilix ecosystem.
 
 Name | About | 
 -------------|-------|
+[Meilix](https://github.com/fossasia/meilix) | This repo for standalone build or as a backend for the webapp 
 [Meilix-generator](https://github.com/fossasia/meilix-generator) | A webapp which generates an ISO Image of Meilix Linux
 [Meilix-systemlock](https://github.com/fossasia/meilix-systemlock/) | A program to freeze the system 
-[Meilix-artwork](https://github.com/fossasia/meilix-artwork/) | Repository to store the boot screen theme of Meilix
+[Meilix-artwork](https://github.com/fossasia/meilix-artwork/) | Boot screen splash themes for Meilix
 
 ## Usage
 
@@ -62,15 +62,13 @@ To create your own Linux for an event kiosk or just for trying it out, you can u
 
 Here are some pre-requisites to develop Meilix. 
 
-- Exposure to the terminal and basic commands. 
-- Experience in working with a UNIX or GNU/Linux based system. 
-- Basic understanding of Operating System and Package managers. 
-- Programming/Scripting experience. Shell Scripting etc.
+- Exposure to the terminal and basic commands and basic comprehension of shell scripts
+- Experience in working with a Debian system. 
 - [LPIC1](https://en.wikipedia.org/wiki/Linux_Professional_Institute_Certification_Programs#LPIC-1) is a huge plus
 
 ## Development 
 
-Meilix fetches ubuntu source, customizes it to add features and then builds the distro. It uses shell scripts to perform all the tasks, build can be made on local machine, Travis CI.
+Meilix fetches ubuntu source, customizes it to add features and then builds the distro. It uses shell scripts to perform all the tasks, build can be made on local machine or via Travis CI.
 
 ### File Structure
 
@@ -80,23 +78,14 @@ Basic understanding of the file structure is required to do development, here is
 .
 ├── build.sh
 ├── LICENSE.md
-├── sources.list
+├── sources.xenial.list
 ├── README.md
-├── meilix-metapackage_1.0-1_amd64.changes
-├── meilix-metapackage_1.0-1_all.deb
-├── meilix-metapackages_1.0_all.deb
-├── meilix-metapackage_1.0-1.tar.gz
-├── meilix-metapackage_1.0-1.dsc
 ├── systemlock_0.1-1_all.deb
 ├── image-amd64.tar.lzma
 ├── image-i386.tar.lzma
 ├── amd64.tar.lzma
-├── meilix-metapackages_1.0_all
-│   └── control/...
 ├── ubiquity-slideshow
 |   └── slides/...
-├── metapackage
-│   └── debian/...
 ├── polkit-1
 │   └── actions/...
 ├── conf
@@ -151,7 +140,6 @@ Basic understanding of the file structure is required to do development, here is
     └── var/...
 ```
 
-
 ### Build
 
 **Building Locally**
@@ -173,7 +161,7 @@ $ ./build.sh
 
 **Build Using Travis***
 
-1. Update `.travis.yml` according to your API. [Read More](https://blog.fossasia.org/setting-environment-variables-up-in-travis-and-heroku-for-meilix-and-meilix-generator/)
+1. Update `.travis.yml` according to your API key [as explained here](https://blog.fossasia.org/setting-environment-variables-up-in-travis-and-heroku-for-meilix-and-meilix-generator/)
 2. Push changes to your repo, it will start the build process.
 
 ## Contribution
