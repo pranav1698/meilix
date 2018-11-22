@@ -165,22 +165,22 @@ sed -i 's/Kubuntu/meilix/' image/.disk/info
 # in a wrong way to a more current version and should be dead code as it stands.
 # We replace by "newversion" that could also be "release".
 # Check the contents of affected files such as: 
-# ls image/isolinux/f1.txt
+#ls image/isolinux/f1.txt
 # and rectify the lines below (AR).
 # The hack applied when you took a old kernel lzma image for a new version
 # ISSUE in the tracker is 337
 # All the best, André
 # Fix old version and date info in .hlp files
-# newversion=$(date -u +%y.%m) # Should be derived from releasename $4 FIXME
-# for oldversion in 17.08
-# do
-#  sed -i -e "s/${oldversion}/${newversion}/g" image/isolinux/*.hlp image/isolinux/f1.txt
-# done
-# newdate=$(date -u +%Y%m%d)
-# for olddate in 20100113 20100928
-# do
+#newversion=$(date -u +%y.%m) # Should be derived from releasename $4 FIXME
+#for oldversion in 17.08
+#do
+# sed -i -e "s/${oldversion}/${newversion}/g" image/isolinux/*.hlp image/isolinux/f1.txt
+#done
+#newdate=$(date -u +%Y%m%d)
+#for olddate in 20100113 20100928
+#do
 #  sed -i -e "s/${olddate}/${newdate}/g" image/isolinux/*.hlp image/isolinux/f1.txt
-# done
+#done
 
 # Create filesystem manifests
 sudo chroot chroot dpkg-query -W --showformat='${Package} ${Version}\n' >/tmp/manifest.$$
@@ -236,7 +236,7 @@ rmdir $tempmount
 # Generate md5sum.txt checksum file (now with new improved boot.cat)
 sudo find . -type f -print0 |xargs -0 sudo md5sum |grep -v "\./md5sum.txt" >md5sum.txt
 
-# Remove temprary ISO file
+# Remove temporary ISO file
 sudo rm ../$ISOFILE.tmp
 
 # Create an Meilix ISO from the image directory tree
