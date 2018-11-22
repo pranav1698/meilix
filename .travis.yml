@@ -16,7 +16,8 @@ include:
       - debhelper
       - fakeroot
       - devscripts
-      - plymouth
+      - plymouth-label
+      - plymouth-themes
 sudo: required
 dist: xenial
 git:
