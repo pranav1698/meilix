@@ -52,6 +52,7 @@ sudo apt-get update
 sudo apt-get -qq install $devtools -y --no-install-recommends
 sudo apt-get -qq install dpkg-dev debhelper fakeroot
 sudo apt-get -qq install devscripts
+sudo apt-get -qq install plymouth-label plymouth-themes
 sudo apt-get -qq install tree # for debugging
 
 # Initram extraction, see https://unix.stackexchange.com/questions/163346/why-is-it-that-my-initrd-only-has-one-directory-namely-kernel
