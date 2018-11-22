@@ -43,8 +43,10 @@ apt-get -qq -y --purge install ubuntu-standard casper lupin-casper \
 apt-get -qq -y install xorg xinit sddm
 # Install LXQT components
 apt-get -qq -y install lxqt openbox 
+apt-get install plymouth
 apt-get -f install
-systemctl enable sddm
+
+
 update-alternatives --install /usr/bin/x-session-manager x-session-manager /usr/bin/startlxqt 140
 # ugly hack
 sed -i 's\plasma.desktop\lxqt.desktop\g' /usr/share/initramfs-tools/scripts/casper-bottom/15autologin 
