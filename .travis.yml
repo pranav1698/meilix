@@ -41,15 +41,15 @@ notifications:
   slack: fossasia:3pMkQrSogvEMfnu9aJDW2ZYC
 
 deploy:
-  - provider: releases
-    skip_cleanup: true
-    api_key:
-      secure: "tVVKOMh0dZCrHkAfoqIYJYleJwTwXptumugYVcGi/WDaeFi9o1ROTKVdLXUO2CcAUgWUphWjnckF4uVdKBcCB87Af0hgQBXdpDJ4VSb2FFjjY3Lf5dpR1FTYR6Tqsn821mYM17wtwmO1tlg8zFqd1yysr36wZ0EqzFwBtV2FA0jNfxGtFyyJRZnDcCQqwREc2iIENSt8tE787HbwPaWGBEkpC8zYwNYkQXPgFvTi+Z/6Tnobz7gnk9wQFuzFDymr6sDTQF+2ycfGnJnXDOZjqC5haDZbXop6dR/ru6hwO6U4khQIFHEPMZEEHnocB1gOOSiM9Z/yztmY18X4jzx8gZAMIrdKwYlZzEeVAbnlX0WXfjOFmcKIvaMtdNZg9QJil3ePPq/80uNo4TGUy+04ll6jBqqMf4BTs/dxohLyksxN79iuAplRtEl96ZQG+0VI1B0OE3WjwtcuvcuTW7oZ1sOULY4UsNmIdPpJZqIrQpN4AevRJ6DV844uvJ63Sbdzyu0EjMTp+h+2dWiQnnW4aP0mbYsBGWTj0vM2CD/fHtM9W6oVNqLsF7pEe9fg7d2hYJS7Zkuwco33WHqy4JGvLl9uyzSsy0cueJgwg5DYJ8zWDzhlCbKtEk1kG+eKVj+C5rG4shOMK4zf+0iVn5BCNB5d3OgLpAGJwFx1uqqTMrc="
-    file_glob: true # http://stackoverflow.com/a/28579635/1320237
-    file: "/home/travis/${image_name}"
-    on:
-      all_branches: true
-
+  provider: releases
+  skip_cleanup: true
+  api_key:
+    secure: Sw8iM/tB5jej+GLEkFb89g/aRRs/hDPSBByu0VzMnJLCXw7/RgeqyakkORMXD5EL+fOmm+cdMVWZqRWV8wgnPwlRBFzNgRJSYYVMhb3PbZTdP4GcF/lz0TB/HDwNvm5t36qi90X5NpxeziJ3quIgdb9bZ/Cq6F2jqUZMelQsERH++aEyYHMpTkBWPFKvjFeoF08zuFB8nXXkamiJW4Yes+3/j046IntXZZguL3I5BhYnBTWmF0b2rKhc00+JsvODvg27tmI5HlscxrxUhBPopCRv83LxaLBk08WxAV4u94rxJyLTpOMOEWzx427qdnmPU0KXo1JrnIXqh4bcmTew9AmsYZi4qPJAX0VJjy3ZqUwQMxtqUF2V+EAYC6ksJz0WuiFeFNjKzfAeUOYQu0nmcQ0qzyyOHBjxdg/QPVumYVUtMY+zbkKc4IOudDIUnI5VWIidpjHJaEPbEyONOAloYw+aaCQv0G0n6C1tM7UlmFHQeViFLkInjYshdoO5ocXdaZvwDBUiljuHDDkgufqctWrudyBmjwyQBRCY7xekp4tNuwVUiljV7VDSoUIjXdSqoo7oLvy6QB5tu8voj8kdysXmsCgLosFTTvpNhiU9ZicDHoF9u87g1AX0g7mJpBqhiStMwV2B3uZU0h362dsfh7USrQbIkMLJc6VmqPJW7rM=
+  file_glob: true # http://stackoverflow.com/a/28579635/1320237
+  file: "/home/travis/${image_name}"
+  on:
+    all_branches: true
+  
 after_deploy:
   - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then bash ./scripts/releases_maintainer.sh; fi'
   - cd scripts/mail-scripts && ./mail.py
