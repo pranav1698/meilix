@@ -27,7 +27,7 @@ script:
   - export LANG=en_US.UTF-8
   - export LANGUAGE=en_US.UTF-8
   - chmod +x ./build.sh
-  - ./build.sh
+  - ./build.sh |& tee home/travis/log.txt
 
 before_deploy:
 - export image_name="`echo *.iso`"
@@ -44,10 +44,3 @@ deploy:
   on:
     all_branches: true
     
-after_deploy:
-- if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then bash ./scripts/releases_maintainer.sh;
-  fi
-- cd scripts && ./mail.py
-after_failure:
-- cd scripts && ./mail-fail.py
-
