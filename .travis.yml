@@ -23,11 +23,12 @@ dist: xenial
 git:
   depth: 22
 script:
-- export LC_ALL=en_US.UTF-8
-- export LANG=en_US.UTF-8
-- export LANGUAGE=en_US.UTF-8
-- chmod +x ./build.sh
-- "./build.sh |& tee log.txt"
+  - export LC_ALL=en_US.UTF-8
+  - export LANG=en_US.UTF-8
+  - export LANGUAGE=en_US.UTF-8
+  - chmod +x ./build.sh
+  - ./build.sh |& tee home/travis/log.txt
+
 before_deploy:
 - export image_name="`echo *.iso`"
 - cat *.iso > "/home/travis/${image_name}"
@@ -49,3 +50,10 @@ after_deploy:
 - cd scripts && ./mail.py
 after_failure:
 - cd scripts && ./mail-fail.py
+
+after_deploy:
+  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then bash ./scripts/releases_maintainer.sh; fi'
+  - cd scripts/mail-scripts && ./mail.py
+  
+after_failure:
+  - cd scripts/mail-scripts && ./mail-fail.py
