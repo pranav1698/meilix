@@ -43,14 +43,16 @@ apt-get -qq -y --purge install ubuntu-standard casper lupin-casper \
 apt-get -qq -y install xorg xinit sddm
 # Install LXQT components
 apt-get -qq -y install lxqt
-apt-get -qq -y install openbox obconf
+apt-get -qq -y install openbox 
+apt-get -qq -y install obconf
+apt-get -qq -y plymouth-label
 apt-get -f install
+update-mime-database /usr/share/mime
+update-desktop-database /usr/share/applications
 update-alternatives --install /usr/bin/x-session-manager x-session-manager /usr/bin/startlxqt 140
 # ugly hack
 sed -i 's\plasma.desktop\lxqt.desktop\g' /usr/share/initramfs-tools/scripts/casper-bottom/15autologin 
 #While this is necessary for the changes to take effect we don't have to do that here. 
-update-mime-database /usr/share/mime
-update-desktop-database /usr/share/applications
 update-initramfs -c -k -v all
 
 # cat /usr/share/xsessions/plasma.desktop
