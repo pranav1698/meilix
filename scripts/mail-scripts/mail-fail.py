@@ -4,6 +4,7 @@ import os
 import datetime
 import base64
 
+cat ../../log.txt
 #attachment encoding
 with open('../log.txt','rb') as f:
     data = f.read()
