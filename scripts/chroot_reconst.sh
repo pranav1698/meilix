@@ -50,6 +50,8 @@ apt-get -f install
 update-mime-database /usr/share/mime
 update-desktop-database /usr/share/applications
 update-alternatives --install /usr/bin/x-session-manager x-session-manager /usr/bin/startlxqt 140
+update-alternatives --install /usr/bin/x-session-manager x-session-manager /usr/bin/startx 140
+
 # ugly hack
 sed -i 's\plasma.desktop\lxqt.desktop\g' /usr/share/initramfs-tools/scripts/casper-bottom/15autologin 
 #While this is necessary for the changes to take effect we don't have to do that here. 
