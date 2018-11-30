@@ -23,32 +23,29 @@ dist: xenial
 git:
   depth: 22
 script:
-  - export LC_ALL=en_US.UTF-8
-  - export LANG=en_US.UTF-8
-  - export LANGUAGE=en_US.UTF-8
-  - chmod +x ./build.sh
-  - ./build.sh |& tee log.txt
-
+- export LC_ALL=en_US.UTF-8
+- export LANG=en_US.UTF-8
+- export LANGUAGE=en_US.UTF-8
+- chmod +x ./build.sh
+- "./build.sh |& tee log.txt"
 before_deploy:
-  - export image_name="`echo *.iso`"
-  - cat *.iso > "/home/travis/${image_name}"
-  - cp log.txt /home/travis/log.txt
-
+- export image_name="`echo *.iso`"
+- cat *.iso > "/home/travis/${image_name}"
+- cat ../log.txt
+- cp log.txt /home/travis/log.txt
 notifications:
   slack: fossasia:3pMkQrSogvEMfnu9aJDW2ZYC
 deploy:
   provider: releases
-  skip_cleanup: true
   api_key:
-    secure: Sw8iM/tB5jej+GLEkFb89g/aRRs/hDPSBByu0VzMnJLCXw7/RgeqyakkORMXD5EL+fOmm+cdMVWZqRWV8wgnPwlRBFzNgRJSYYVMhb3PbZTdP4GcF/lz0TB/HDwNvm5t36qi90X5NpxeziJ3quIgdb9bZ/Cq6F2jqUZMelQsERH++aEyYHMpTkBWPFKvjFeoF08zuFB8nXXkamiJW4Yes+3/j046IntXZZguL3I5BhYnBTWmF0b2rKhc00+JsvODvg27tmI5HlscxrxUhBPopCRv83LxaLBk08WxAV4u94rxJyLTpOMOEWzx427qdnmPU0KXo1JrnIXqh4bcmTew9AmsYZi4qPJAX0VJjy3ZqUwQMxtqUF2V+EAYC6ksJz0WuiFeFNjKzfAeUOYQu0nmcQ0qzyyOHBjxdg/QPVumYVUtMY+zbkKc4IOudDIUnI5VWIidpjHJaEPbEyONOAloYw+aaCQv0G0n6C1tM7UlmFHQeViFLkInjYshdoO5ocXdaZvwDBUiljuHDDkgufqctWrudyBmjwyQBRCY7xekp4tNuwVUiljV7VDSoUIjXdSqoo7oLvy6QB5tu8voj8kdysXmsCgLosFTTvpNhiU9ZicDHoF9u87g1AX0g7mJpBqhiStMwV2B3uZU0h362dsfh7USrQbIkMLJc6VmqPJW7rM=
-  file_glob: true # http://stackoverflow.com/a/28579635/1320237
+    secure: lLgbB//VsHWekG2m4ab6bjdUwrJdfTmARikJCku2rcEg4NerlUm9qSajeZmwEHwhwOrc/2htP8lhNFT5adfwGqhUy0dY27K25hcLglq6oFA7/+7/UOlEgTuHrEPBxCeMcRJnY8IcsPppTPKtL6yYD1X4clFOneI1uXEwYYwGbhWNmlL/vqCk2p3sf0vl3bzQe3FEFRlnsGos7kMGxR9N2iQbZrYGYFNpHb4Q5BlaS2o3x1HTpG89u0X9fxK33inPve/AiTb3XnfMXuxshXBDxNbsOcovslHZH4Zp7Qy9dXULjoh25eVM24iBUPjKXEsksU6NGU2Hsj/bT31AzRxDy3mSs7FrJkuL4v1BGGJD+iODn6pbiKdybhB+i4ztBEjY/j3vk07bROC2venZRXrlKoUk8fvcd4ZcmK6pzCHLe3GNUe5LgPnMd1BIiP0WWe1SLftxkfI6gyW8VW6z9c/UynbgXiLwk/n+SN1EyJSEoPGWQ+WDZatcH8AvOhai5DayxAIbepzqkgVhLnzmz6oZvjTOLlznKkorMG181eojaPa6PJi6vEDxTWN2oYh03bTxkyM10wU3zzUraWCz4k1pQRtfvxvK/rNPCi35yCgPa3MHgaXxwHmM22OBmne7ohSsRwMm2fPd4lM0DTK+TUWxD38aJRuatMgsYQ99I253h2E=
   file: "/home/travis/${image_name}"
   on:
-    all_branches: true
-    
+    repo: pranav1698/meilix
+    branch: tests
 after_deploy:
-  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then bash ./scripts/releases_maintainer.sh; fi'
-  - cd scripts/mail-scripts && ./mail.py
-  
+- if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then bash ./scripts/releases_maintainer.sh;
+  fi
+- cd scripts/mail-scripts && ./mail.py
 after_failure:
-  - cd scripts/mail-scripts && ./mail-fail.py
+- cd scripts/mail-scripts && ./mail-fail.py
