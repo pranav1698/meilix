@@ -41,13 +41,21 @@ apt-get -qq -y --purge install ubuntu-standard casper lupin-casper \
 # Install base packages
 #apt-get -qq -y install xorg lightdm  
 apt-get -qq -y install xorg xinit sddm default-settings
+
+# Adding the lxqt ppa
+add apt-repository -y ppa:lubuntu-dev/lubuntu-daily
+apt-get update
+
 # Install LXQT components
 apt-get update
 apt-get -qq -y install lxqt
-apt-get -qq -y install openbox 
-apt-get -qq -y plymouth-label
+apt-get --qq -y --no-install-recommends install kwin-x11 kwin-style-breeze kwin-addons systemsettings
+apt-get --qq -y install kde-style-breeze kde-style-breeze-qt4
 apt-get -f install
 update-alternatives --install /usr/bin/x-session-manager x-session-manager /usr/bin/startlxqt 140
+
+# Final lxqt configuration
+cat .config/lxqt/session.conf
 
 # ugly hack
 sed -i 's\plasma.desktop\lxqt.desktop\g' /usr/share/initramfs-tools/scripts/casper-bottom/15autologin 
@@ -55,9 +63,9 @@ sed -i 's\plasma.desktop\lxqt.desktop\g' /usr/share/initramfs-tools/scripts/casp
 update-initramfs -c -k -v all
 
 # cat /usr/share/xsessions/plasma.desktop
-# rm  /usr/share/xsessions/plasma.desktop
+rm  /usr/share/xsessions/plasma.desktop
 # ugliest hack ever
-# cp  /usr/share/xsessions/lxqt.desktop /usr/share/xsessions/plasma.desktop
+cp  /usr/share/xsessions/lxqt.desktop /usr/share/xsessions/plasma.desktop
 
 # plymouth boot splash
 
