@@ -49,10 +49,10 @@ apt-get update
 # Install LXQT components
 apt-get update
 apt-get -qq -y install lxqt
-apt-get -qq -y --no-install-recommends install kwin-x11 kwin-style-breeze kwin-addons systemsettings
-apt-get -qq -y install kde-style-breeze kde-style-breeze-qt4
-apt-get -f install
-update-alternatives --install /usr/bin/x-session-manager x-session-manager /usr/bin/startlxqt 50
+# apt-get -qq -y --no-install-recommends install kwin-x11 kwin-style-breeze kwin-addons systemsettings
+# apt-get -qq -y install kde-style-breeze kde-style-breeze-qt4
+# apt-get -f install
+update-alternatives --install /usr/bin/x-session-manager x-session-manager /usr/bin/startlxqt 140
 
 
 
