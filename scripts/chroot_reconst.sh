@@ -55,7 +55,7 @@ apt-get -f install
 update-alternatives --install /usr/bin/x-session-manager x-session-manager /usr/bin/startlxqt 140
 
 # Final lxqt configuration
-cat .config/lxqt/session.conf 
+cat .config/lxqt/session.conf
 
 # ugly hack
 sed -i 's\plasma.desktop\lxqt.desktop\g' /usr/share/initramfs-tools/scripts/casper-bottom/15autologin 
