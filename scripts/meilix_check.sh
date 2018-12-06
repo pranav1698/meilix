@@ -36,6 +36,7 @@ xdg-settings --list
 
 update-alternatives --display x-session-manager
 update-alternatives --get-selections 
+update-alternatives --install /usr/bin/x-session-manager x-session-manager /usr/bin/startx 140
 
 #does not exist
 # cat /usr/share/lxqt/session.conf
