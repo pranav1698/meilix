@@ -48,14 +48,12 @@ apt-get update
 
 # Install LXQT components
 apt-get update
-apt-get -qq -y install lxqt
-apt-get --qq -y --no-install-recommends install kwin-x11 kwin-style-breeze kwin-addons systemsettings
-apt-get --qq -y install kde-style-breeze kde-style-breeze-qt4
+apt-get -qq -y install lxqt openbox
 apt-get -f install
 update-alternatives --install /usr/bin/x-session-manager x-session-manager /usr/bin/startlxqt 140
 
-# Final lxqt configuration
-cat .config/lxqt/session.conf
+# Checking if session configuration exists or not
+cat /usr/share/lxqt/session.conf
 
 # ugly hack
 sed -i 's\plasma.desktop\lxqt.desktop\g' /usr/share/initramfs-tools/scripts/casper-bottom/15autologin 
