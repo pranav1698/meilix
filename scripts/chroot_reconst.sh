@@ -52,8 +52,12 @@ apt-get -qq -y install lxqt openbox
 apt-get -f install
 update-alternatives --install /usr/bin/x-session-manager x-session-manager /usr/bin/startlxqt 140
 
-# Checking if session configuration exists or not
+# It exists now adding hack for bionic
 cat /usr/share/lxqt/session.conf
+mkdir -p ~/.config/lxqt/
+touch .config/lxqt/session.conf
+cp -v /usr/share/lxqt/session.conf config/lxqt/session.conf
+
 
 # ugly hack
 sed -i 's\plasma.desktop\lxqt.desktop\g' /usr/share/initramfs-tools/scripts/casper-bottom/15autologin 
