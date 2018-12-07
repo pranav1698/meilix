@@ -52,12 +52,18 @@ apt-get -qq -y install lxqt openbox
 apt-get -f install
 update-alternatives --install /usr/bin/x-session-manager x-session-manager /usr/bin/startlxqt 140
 
-# It exists now adding hack for bionic
+# Copying all config files
 cat /usr/share/lxqt/session.conf
-cd ~
+cat /usr/share/lxqt/panel.conf
+cat /usr/share/lxqt/lxqt.conf
 mkdir -p ~/.config/lxqt/
-touch .config/lxqt/session.conf
+touch ~/.config/lxqt/session.conf
+touch ~/.config/lxqt/panel.conf
+touch ~/.config/lxqt/lxqt.conf
 cp -v /usr/share/lxqt/session.conf .config/lxqt/session.conf
+cat .config/lxqt/session.conf
+cp -v /usr/share/lxqt/session.conf .config/lxqt/panel.conf
+cp -v /usr/share/lxqt/session.conf .config/lxqt/lxqt.conf
 
 
 # ugly hack
