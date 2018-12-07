@@ -54,6 +54,7 @@ update-alternatives --install /usr/bin/x-session-manager x-session-manager /usr/
 
 # It exists now adding hack for bionic
 cat /usr/share/lxqt/session.conf
+cd ~
 mkdir -p ~/.config/lxqt/
 touch .config/lxqt/session.conf
 cp -v /usr/share/lxqt/session.conf config/lxqt/session.conf
