@@ -60,10 +60,10 @@ mkdir -p ~/.config/lxqt/
 touch ~/.config/lxqt/session.conf
 touch ~/.config/lxqt/panel.conf
 touch ~/.config/lxqt/lxqt.conf
-cp -v /usr/share/lxqt/session.conf .config/lxqt/session.conf
+cp -v /usr/share/lxqt/session.conf ~/.config/lxqt/session.conf
 cat .config/lxqt/session.conf
-cp -v /usr/share/lxqt/session.conf .config/lxqt/panel.conf
-cp -v /usr/share/lxqt/session.conf .config/lxqt/lxqt.conf
+cp -v /usr/share/lxqt/session.conf ~/.config/lxqt/panel.conf
+cp -v /usr/share/lxqt/session.conf ~/.config/lxqt/lxqt.conf
 
 
 # ugly hack
