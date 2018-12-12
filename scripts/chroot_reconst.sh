@@ -55,6 +55,8 @@ rm  /usr/share/xsessions/plasma.desktop
 # ugliest hack ever
 cp  /usr/share/xsessions/lxqt.desktop /usr/share/xsessions/plasma.desktop
 
+rm /usr/bin/lxqt-notificationd
+
 # plymouth boot splash
 
 # after Xenial one could also use apt install ./package
