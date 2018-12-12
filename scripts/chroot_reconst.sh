@@ -55,7 +55,9 @@ rm  /usr/share/xsessions/plasma.desktop
 # ugliest hack ever
 cp  /usr/share/xsessions/lxqt.desktop /usr/share/xsessions/plasma.desktop
 
-rm /usr/bin/lxqt-notificationd
+# rm /usr/bin/lxqt-notificationd
+sed -i '$ a spacing=0' ~/.config/lxqt/notifications.conf
+cat ~/.config/lxqt/notifications.conf
 
 # plymouth boot splash
 
