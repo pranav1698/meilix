@@ -66,8 +66,9 @@ rm  /usr/share/xsessions/plasma.desktop
 # ugliest hack ever
 cp  /usr/share/xsessions/lxqt.desktop /usr/share/xsessions/plasma.desktop
 
-# plymouth boot splash
+apt-get remove lxqt-notificationd
 
+# plymouth boot splash
 # after Xenial one could also use apt install ./package
 dpkg -i plymouth-theme-meilix-text_1.0-1_all.deb; apt-get -f install; dpkg -i plymouth-theme-meilix-text_1.0-1_all.deb
 dpkg -i plymouth-theme-meilix-logo_1.0-1_all.deb; apt-get -f install; dpkg -i plymouth-theme-meilix-logo_1.0-1_all.deb
