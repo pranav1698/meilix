@@ -58,9 +58,9 @@ rm  /usr/share/xsessions/plasma.desktop
 cp  /usr/share/xsessions/lxqt.desktop /usr/share/xsessions/plasma.desktop
 
 # Adding a wallpaper of choice
-cp -v ./paper.jpeg /usr/share/lxqt/themes/meilix
-sed -i 's\wallpaper.png\paper.jpeg\g' /usr/share/lxqt/theme/meilix/wallpaper.cfg
-cat /usr/share/lxqt/theme/meilix/wallpaper.cfg
+cp -v ./scripts/paper.jpeg /usr/share/lxqt/themes/meilix
+sed -i 's\wallpaper.png\paper.jpeg\g' /usr/share/lxqt/themes/meilix/wallpaper.cfg
+cat /usr/share/lxqt/themes/meilix/wallpaper.cfg
 
 # plymouth boot splash
 # after Xenial one could also use apt install ./package
