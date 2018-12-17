@@ -17,6 +17,9 @@ export DEBIAN_FRONTEND=noninteractive
 export LANG=C
 export LIVE_BOOT_SCRIPTS="casper lupin-casper"
 
+# Meilix default settings
+dpkg -i --force-overwrite meilix-default-settings_1.0_all.deb
+
 # To allow a few apps using upstart to install correctly. JM 2011-02-21
 dpkg-divert --local --rename --add /sbin/initctl
 ln -s /bin/true /sbin/initctl
