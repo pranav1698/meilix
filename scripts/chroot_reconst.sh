@@ -58,7 +58,7 @@ rm  /usr/share/xsessions/plasma.desktop
 cp  /usr/share/xsessions/lxqt.desktop /usr/share/xsessions/plasma.desktop
 
 # Adding a wallpaper of choice
-cp -v ./scripts/paper.jpeg /usr/share/lxqt/themes/meilix
+cp -v ./paper.jpeg /usr/share/lxqt/themes/meilix
 sed -i 's\wallpaper.png\paper.jpeg\g' /usr/share/lxqt/themes/meilix/wallpaper.cfg
 cat /usr/share/lxqt/themes/meilix/wallpaper.cfg
 
