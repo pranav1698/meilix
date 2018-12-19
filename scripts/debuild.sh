@@ -15,6 +15,6 @@ cd ..
 #echo y | debuild -uc -us            #debuild the plymouth theme
 
 #Building meilix default theme
-cd meilix-default-settings/meilix-default-theme
+cd meilix-default-settings
 echo y | debuild -uc -us 
 cd ..
