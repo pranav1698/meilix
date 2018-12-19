@@ -1,0 +1,13 @@
+Source: meilix-default-theme
+Section: x11
+Priority: optional
+Maintainer: meilix <vanhonit@gmail.com>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 4.1.2
+Homepage: http://mbm.vn
+
+Package: meilix-default-theme
+Architecture: all
+Depends: ${misc:Depends}
+Description: Default Theme for meilix
+ Default theme tailored for meilix.
