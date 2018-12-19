@@ -4,3 +4,9 @@ chroot/
 image/casper/filesystem.squash*
 image/casper/vm*
 .DS_Store
+
+# meilix-default-theme files
+meilix-default-theme_1.0-1_amd64.build
+meilix-default-theme_1.0-1_amd64.buildinfo
+meilix-default-theme_1.0-1_amd64.changes
+meilix-default-theme_1.0-1.debian.tar.xz

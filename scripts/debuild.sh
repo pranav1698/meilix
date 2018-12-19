@@ -13,3 +13,8 @@ cd ..
 #sudo apt-get -qq install libfile-fcntllock-perl  #installing files required by meilix artwork to build plymouth
 #cd meilix-artwork                   #cd into the metapackage directory
 #echo y | debuild -uc -us            #debuild the plymouth theme
+
+#Building meilix default theme
+cd meilix-default-settings/meilix-default-theme
+echo y | debuild -uc -us 
+cd ..
