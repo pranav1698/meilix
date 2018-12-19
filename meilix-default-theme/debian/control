@@ -2,7 +2,7 @@ Source: meilix-default-theme
 Section: x11
 Priority: optional
 Maintainer: meilix <vanhonit@gmail.com>
-Build-Depends: debhelper (>= 10.0.0)
+Build-Depends: debhelper (>= 8.0.0)
 Standards-Version: 4.1.4
 Homepage: http://mbm.vn
 
