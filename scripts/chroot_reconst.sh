@@ -18,7 +18,7 @@ export LANG=C
 export LIVE_BOOT_SCRIPTS="casper lupin-casper"
 
 # Meilix default Theme
-dpkg -i --force-overwrite meilix-default-theme_1.0_all.deb
+dpkg -i --force-overwrite meilix-default-theme_1.0-1_all.deb
 
 # To allow a few apps using upstart to install correctly. JM 2011-02-21
 dpkg-divert --local --rename --add /sbin/initctl
