@@ -1,0 +1,32 @@
+Description: <short summary of the patch>
+ Removed etc
+ .
+ meilix-default-theme (1.0-1) UNRELEASED; urgency=medium
+ .
+   * Initial release. (Closes: #XXXXXX)
+Author: Pranav Kulshrestha <hulkcodexl16@gmail.com>
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: <vendor|upstream|other>, <url of original patch>
+Bug: <url in upstream bugtracker>
+Bug-Debian: https://bugs.debian.org/<bugnumber>
+Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
+Forwarded: <no|not-needed|url proving that it has been forwarded>
+Reviewed-By: <name and email of someone who approved the patch>
+Last-Update: 2018-12-19
+
+--- meilix-default-theme-1.0.orig/Makefile
++++ meilix-default-theme-1.0/Makefile
+@@ -6,7 +6,7 @@ all: install
+ 
+ install:
+ 	mkdir -pv $(DESTDIR)
+-	cp -a etc usr $(DESTDIR)/.
++	cp -a usr $(DESTDIR)/.
+ 	# po generation
+ 	for i in $(SUBDIRS); do \
+ 		make -C $(DESTDIR)/$$i; \
