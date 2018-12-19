@@ -89,7 +89,7 @@ sudo cp -vr /etc/resolvconf chroot/etc/resolvconf
 sudo cp -v sources.${release}.list chroot/etc/apt/sources.list
 
 # Copy our custom packages into the chroot
-sudo cp -v meilix-default-settings_*_all.deb chroot
+sudo cp -v meilix-default-theme_*_all.deb chroot
 sudo cp -v systemlock_*_all.deb chroot
 sudo cp -v plymouth-theme-meilix-logo_*_all.deb chroot
 sudo cp -v plymouth-theme-meilix-text_*_all.deb chroot

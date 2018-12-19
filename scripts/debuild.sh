@@ -3,8 +3,8 @@
 # on travis that means in /home/travis/build/fossasia/meilix
 
 # [-f meilix-default-settings_1.0_all.deb] && rm meilix-default-settings_1.0_all.deb  #remove older package if exist
-cd meilix-default-settings  #cd into the metapackage directory
-echo y | debuild -uc -us    #debuild the meilix-default-settings metapackage
+cd meilix-default-theme  #cd into the metapackage directory
+echo y | debuild -uc -us    #debuild the meilix-default-theme metapackage
 cd ..
 
 # Building Meilix-Artwork moved to the repository of meilix-artwork,
