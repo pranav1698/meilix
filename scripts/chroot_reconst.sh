@@ -65,8 +65,8 @@ apt-get -qq -y install sublime-text
 
 
 # after Xenial one could also use apt install ./package
-dpkg -i plymouth-theme-meilix-text_1.0-1_all.deb; apt-get -f install; dpkg -i plymouth-theme-meilix-text_1.0-1_all.deb
-dpkg -i plymouth-theme-meilix-logo_1.0-1_all.deb; apt-get -f install; dpkg -i plymouth-theme-meilix-logo_1.0-1_all.deb
+dpkg -i plymouth-theme-meilix-text_1.0-2_all.deb; apt-get -f install; dpkg -i plymouth-theme-meilix-text_1.0-2_all.deb
+dpkg -i plymouth-theme-meilix-logo_1.0-2_all.deb; apt-get -f install; dpkg -i plymouth-theme-meilix-logo_1.0-2_all.deb
 
 update-alternatives --install /usr/share/plymouth/themes/text.plymouth text.plymouth /usr/share/plymouth/themes/meilix-text/meilix-text.plymouth 130
 update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/meilix-logo/meilix-logo.plymouth 140
@@ -80,6 +80,9 @@ cat /usr/share/applications/lxqt-about.desktop
 sed -i '$ a NoDisplay=true' /usr/share/applications/lxqt-about.desktop
 cat /usr/share/applications/lxqt-about.desktop
 
+# Meilix default settings
+dpkg -i --force-overwrite meilix-default-settings_1.0_all.deb
+
 # Clean up the chroot before
 perl -i -nle 'print unless /^Package: language-(pack|support)/ .. /^$/;' /var/lib/apt/extended_states
 apt-get -qq clean
@@ -90,8 +93,8 @@ rm -rf /tmp/*
 rm -f meilix-default-settings_1.0_all.deb
 rm -f meilix-metapackage_1.0-1_all.deb
 rm -f systemlock_0.1-1_all.deb 
-rm -f plymouth-theme-meilix-logo_1.0-1_all.deb 
-rm -f plymouth-theme-meilix-text_1.0-1_all.deb
+rm -f plymouth-theme-meilix-logo_1.0-2_all.deb 
+rm -f plymouth-theme-meilix-text_1.0-2_all.deb
 
 # Meilix Check Skript
 chmod +x meilix_check.sh
