@@ -44,8 +44,8 @@ cat /etc/xdg/lxqt/lxqt.conf
 cat /etc/xdg/lxqt/windowmanagers.conf
 cat /etc/xdg/pcmanfm-qt/lxqt/settings.conf
 cat /usr/share/xsessions/lxqt.desktop
-ls /usr/share/lxqt
-ls /etc/skel/
+ls /usr/share/lxqt/themes/meilix
+ls /etc/skel/.config/lxqt/pcmanfm-qt
 
 # Plymouth themes
 ls /usr/share/plymouth/themes # show us which themes we have
