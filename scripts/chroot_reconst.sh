@@ -99,8 +99,8 @@ rm -rf /tmp/*
 rm -f meilix-default-settings_1.0_all.deb
 rm -f meilix-metapackage_1.0-1_all.deb
 rm -f systemlock_0.1-1_all.deb 
-rm -f plymouth-theme-meilix-logo_1.0-1_all.deb 
-rm -f plymouth-theme-meilix-text_1.0-1_all.deb
+rm -f plymouth-theme-meilix-logo_1.0-2_all.deb 
+rm -f plymouth-theme-meilix-text_1.0-2_all.deb
 
 # Meilix Check Skript
 chmod +x meilix_check.sh
