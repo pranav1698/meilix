@@ -63,6 +63,8 @@ echo "deb https://download.sublimetext.com/ apt/stable/" | tee /etc/apt/sources.
 apt-get -qq update
 apt-get -qq -y install sublime-text
 
+# Installing vlc
+apt-get -qq -y vlc
 
 # after Xenial one could also use apt install ./package
 dpkg -i plymouth-theme-meilix-text_1.0-1_all.deb; apt-get -f install; dpkg -i plymouth-theme-meilix-text_1.0-1_all.deb
