@@ -64,7 +64,7 @@ apt-get -qq update
 apt-get -qq -y install sublime-text
 
 # Installing vlc
-apt-get -qq -y vlc
+apt-get -qq -y install vlc
 
 # after Xenial one could also use apt install ./package
 dpkg -i plymouth-theme-meilix-text_1.0-2_all.deb; apt-get -f install; dpkg -i plymouth-theme-meilix-text_1.0-2_all.deb
