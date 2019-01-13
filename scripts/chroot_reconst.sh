@@ -65,10 +65,10 @@ apt-get -qq -y install sublime-text
 
 # Installing vlc
 apt-get -qq -y install vlc
-rm mpv.desktop
-rm smplayer.desktop
-rm smtube.desktop
-rm audacious.desktop
+rm /usr/share/applications/mpv.desktop
+rm /usr/share/applications/smplayer.desktop
+rm /usr/share/applications/smtube.desktop
+apt-get -qq -y remove audacious
 
 
 # after Xenial one could also use apt install ./package
