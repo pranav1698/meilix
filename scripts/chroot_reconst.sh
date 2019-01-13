@@ -70,6 +70,12 @@ rm /usr/share/applications/smplayer.desktop
 rm /usr/share/applications/smtube.desktop
 apt-get -qq -y remove audacious
 
+# Installing Chromium 
+apt-get -qq -y install chromium-browser
+
+# Installing Firefox
+apt-get -qq -y install firefox
+
 
 # after Xenial one could also use apt install ./package
 dpkg -i plymouth-theme-meilix-text_1.0-2_all.deb; apt-get -f install; dpkg -i plymouth-theme-meilix-text_1.0-2_all.deb
