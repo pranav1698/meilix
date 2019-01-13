@@ -94,6 +94,9 @@ cat /usr/share/applications/lxqt-about.desktop
 sed -i '$ a NoDisplay=true' /usr/share/applications/lxqt-about.desktop
 cat /usr/share/applications/lxqt-about.desktop
 
+# Disabling xscreensaver
+xscreensaver-command -exit
+
 # Clean up the chroot before
 perl -i -nle 'print unless /^Package: language-(pack|support)/ .. /^$/;' /var/lib/apt/extended_states
 apt-get -qq clean
