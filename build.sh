@@ -190,8 +190,6 @@ sed -i 's/Lubuntu/Meilix/' image/boot/grub/loopback.cfg
 sudo chroot chroot dpkg-query -W --showformat='${Package} ${Version}\n' | sudo tee image/casper/filesystem.manifest
 sudo cp -v image/casper/filesystem.manifest image/casper/filesystem.manifest-desktop
 
-cp -v /usr/share/applications/vlc.desktop /home/meilix/Desktop
-
 # Remove packages from filesystem.manifest-desktop
 # (language and extra for more hardware support)
 REMOVE='gparted ubiquity ubiquity-frontend-gtk casper live-initramfs user-setup discover1

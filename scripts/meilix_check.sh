@@ -76,6 +76,8 @@ cat /usr/share/initramfs-tools/scripts/casper
 ls /usr/share/initramfs-tools/scripts/casper-bottom/
 less /etc/casper.conf
 
+cp -v /usr/share/applications/vlc.desktop /home/meilix/Desktop
+
 less /usr/share/initramfs-tools/scripts/casper-bottom/25adduser
 less /usr/share/initramfs-tools/scripts/casper-bottom/24preseed
 cat /usr/share/initramfs-tools/scripts/casper-bottom/15autologin
