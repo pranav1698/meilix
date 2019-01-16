@@ -68,7 +68,7 @@ apt-get -qq -y install sublime-text
 
 # Installing vlc
 apt-get -qq -y install vlc
-touch /home/meilix/Desktop/vlc.desktop
+touch ~/home/meilix/Desktop/vlc.desktop
 cp -v /usr/share/applications/vlc.desktop /home/meilix/Desktop/vlc.desktop
 rm /usr/share/applications/mpv.desktop
 rm /usr/share/applications/smplayer.desktop
