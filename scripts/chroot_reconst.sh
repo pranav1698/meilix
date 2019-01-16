@@ -101,6 +101,9 @@ cat /usr/share/applications/lxqt-about.desktop
 # Disabling xscreensaver
 xscreensaver-command -exit
 
+# Disabling screen dimming
+xset -dpms
+
 # Clean up the chroot before
 perl -i -nle 'print unless /^Package: language-(pack|support)/ .. /^$/;' /var/lib/apt/extended_states
 apt-get -qq clean
