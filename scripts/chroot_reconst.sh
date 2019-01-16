@@ -55,6 +55,9 @@ rm  /usr/share/xsessions/plasma.desktop
 # ugliest hack ever
 cp  /usr/share/xsessions/lxqt.desktop /usr/share/xsessions/plasma.desktop
 
+# Switching off screensaver
+apt-get -qq -y remove xscreensaver
+
 # plymouth boot splash
 
 # Installing sublime text editor
@@ -65,6 +68,8 @@ apt-get -qq -y install sublime-text
 
 # Installing vlc
 apt-get -qq -y install vlc
+touch /home/meilix/Desktop/vlc.desktop
+cp -v /usr/share/applications/vlc.desktop /home/meilix/Desktop/vlc.desktop
 rm /usr/share/applications/mpv.desktop
 rm /usr/share/applications/smplayer.desktop
 rm /usr/share/applications/smtube.desktop
