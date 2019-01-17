@@ -81,12 +81,6 @@ less /usr/share/initramfs-tools/scripts/casper-bottom/24preseed
 cat /usr/share/initramfs-tools/scripts/casper-bottom/15autologin
 echo end passphrase section
 
-# Disabling xscreensaver
-xscreensaver-command -exit
-
-# Disabling screen dimming
-xset -dpms
-
 # passwords of user accounts 
 passwd --all -S
 cat /etc/passwd

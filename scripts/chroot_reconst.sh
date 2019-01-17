@@ -86,6 +86,10 @@ apt-get -qq -y install firefox
 dpkg -i plymouth-theme-meilix-text_1.0-2_all.deb; apt-get -f install; dpkg -i plymouth-theme-meilix-text_1.0-2_all.deb
 dpkg -i plymouth-theme-meilix-logo_1.0-2_all.deb; apt-get -f install; dpkg -i plymouth-theme-meilix-logo_1.0-2_all.deb
 
+#screen-dimming turns off always
+echo -ne "\033[9;0]" >> /etc/issue
+setterm -blank 0 >> /etc/issue
+
 # Remove the "LXQT about" entry from the menu
 # /usr/share/applications/lxqt-about.desktop
 # or ~/.local/usr/share override (in skel!)
