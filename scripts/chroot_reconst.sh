@@ -39,8 +39,8 @@ apt-get -qq -y --purge install ubuntu-standard casper lupin-casper \
   laptop-detect os-prober linux-generic
 
 # Install base packages
-#apt-get -qq -y install xorg lightdm  plymouth-label ttf-ubuntu-font-family
-apt-get -qq -y install xorg xinit sddm
+#apt-get -qq -y install xorg lightdm
+apt-get -qq -y install xorg xinit sddm plymouth-label ttf-ubuntu-font-family
 # Install LXQT components
 apt-get -qq -y install lxqt openbox 
 apt-get -f install
