@@ -40,7 +40,7 @@ apt-get -qq -y --purge install ubuntu-standard casper lupin-casper \
 
 # Install base packages
 #apt-get -qq -y install xorg lightdm  
-apt-get -qq -y install xorg xinit sddm plymouth-label ttf-ubuntu-font-family
+apt-get -qq -y install xorg xinit sddm
 # Install LXQT components
 apt-get -qq -y install lxqt openbox 
 apt-get -f install
@@ -55,10 +55,13 @@ rm  /usr/share/xsessions/plasma.desktop
 # ugliest hack ever
 cp  /usr/share/xsessions/lxqt.desktop /usr/share/xsessions/plasma.desktop
 
-# Switching off screensaver
+# Remove screensaver
 apt-get -qq -y remove xscreensaver
 
 # plymouth boot splash
+
+# Installing 
+ap-get -qq -y install git
 
 # Installing sublime text editor
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | apt-key add -
@@ -66,27 +69,24 @@ echo "deb https://download.sublimetext.com/ apt/stable/" | tee /etc/apt/sources.
 apt-get -qq update
 apt-get -qq -y install sublime-text
 
-# Installing vlc
-apt-get -qq -y install vlc
-touch ~/home/meilix/Desktop/vlc.desktop
-cp -v /usr/share/applications/vlc.desktop /home/meilix/Desktop/vlc.desktop
-rm /usr/share/applications/mpv.desktop
-rm /usr/share/applications/smplayer.desktop
-rm /usr/share/applications/smtube.desktop
-apt-get -qq -y remove audacious
-
 # Installing Chromium 
 apt-get -qq -y install chromium-browser
 
 # Installing Firefox
 apt-get -qq -y install firefox
 
+# Installing VLC media player
+apt-get -qq -y install vlc
+rm /usr/share/applications/mpv.desktop
+rm /usr/share/applications/smplayer.desktop
+rm /usr/share/applications/smtube.desktop
+rm /usr/share/applications/audacious.desktop
 
 # after Xenial one could also use apt install ./package
 dpkg -i plymouth-theme-meilix-text_1.0-2_all.deb; apt-get -f install; dpkg -i plymouth-theme-meilix-text_1.0-2_all.deb
 dpkg -i plymouth-theme-meilix-logo_1.0-2_all.deb; apt-get -f install; dpkg -i plymouth-theme-meilix-logo_1.0-2_all.deb
 
-#screen-dimming turns off always
+# screen-dimming turns off always
 echo -ne "\033[9;0]" >> /etc/issue
 setterm -blank 0 >> /etc/issue
 
@@ -98,6 +98,14 @@ cat /usr/share/applications/lxqt-about.desktop
 sed -i '$ a NoDisplay=true' /usr/share/applications/lxqt-about.desktop
 cat /usr/share/applications/lxqt-about.desktop
 
+<<<<<<< HEAD
+=======
+# Switching off screen dimming
+echo -ne "\033[9;0]" >> /etc/issue
+setterm -blank 0 >> /etc/issue
+# Meilix default settings
+dpkg -i --force-overwrite meilix-default-settings_1.0_all.deb
+>>>>>>> origin
 
 # Clean up the chroot before
 perl -i -nle 'print unless /^Package: language-(pack|support)/ .. /^$/;' /var/lib/apt/extended_states
