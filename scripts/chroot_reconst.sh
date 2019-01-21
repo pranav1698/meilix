@@ -40,7 +40,7 @@ apt-get -qq -y --purge install ubuntu-standard casper lupin-casper \
 
 # Install base packages
 #apt-get -qq -y install xorg lightdm
-apt-get -qq -y install xorg xinit sddm plymouth-label ttf-ubuntu-font-family
+apt-get -qq -y install xorg xinit sddm 
 # Install LXQT components
 apt-get -qq -y install lxqt openbox 
 apt-get -f install
@@ -83,7 +83,7 @@ rm /usr/share/applications/smtube.desktop
 rm /usr/share/applications/audacious.desktop
 
 # after Xenial one could also use apt install ./package
-dpkg -i plymouth-theme-meilix-text_1.0-2_all.deb; apt-get -f install; dpkg -i plymouth-theme-meilix-text_1.0-2_all.deb
+dpkg -i plymouth-theme-meilix-text_1.0-2_all.deb; apt-get -qq -y -f install; dpkg -i plymouth-theme-meilix-text_1.0-2_all.deb
 dpkg -i plymouth-theme-meilix-logo_1.0-2_all.deb; apt-get -f install; dpkg -i plymouth-theme-meilix-logo_1.0-2_all.deb
 
 # screen-dimming turns off always
@@ -98,14 +98,11 @@ cat /usr/share/applications/lxqt-about.desktop
 sed -i '$ a NoDisplay=true' /usr/share/applications/lxqt-about.desktop
 cat /usr/share/applications/lxqt-about.desktop
 
-<<<<<<< HEAD
-=======
 # Switching off screen dimming
 echo -ne "\033[9;0]" >> /etc/issue
 setterm -blank 0 >> /etc/issue
 # Meilix default settings
 dpkg -i --force-overwrite meilix-default-settings_1.0_all.deb
->>>>>>> origin
 
 # Clean up the chroot before
 perl -i -nle 'print unless /^Package: language-(pack|support)/ .. /^$/;' /var/lib/apt/extended_states
