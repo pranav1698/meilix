@@ -84,7 +84,7 @@ rm /usr/share/applications/audacious.desktop
 
 # after Xenial one could also use apt install ./package
 dpkg -i plymouth-theme-meilix-text_1.0-2_all.deb; apt-get -qq -y -f install; dpkg -i plymouth-theme-meilix-text_1.0-2_all.deb
-dpkg -i plymouth-theme-meilix-logo_1.0-2_all.deb; apt-get -f install; dpkg -i plymouth-theme-meilix-logo_1.0-2_all.deb
+dpkg -i plymouth-theme-meilix-logo_1.0-2_all.deb
 
 # screen-dimming turns off always
 echo -ne "\033[9;0]" >> /etc/issue
