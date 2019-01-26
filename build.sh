@@ -167,7 +167,7 @@ sed -i 's/Lubuntu/Meilix/' image/boot/grub/grub.cfg && cat image/boot/grub/grub.
 
 ls image/isolinux
 sudo rm image/isolinux/back.jpg
-sudo cp -v docs/back.jpg image/isolinux
+cp -Rf $TRAVIS_BUILD_DIR/back.jpg image/isolinux
 ls image/isolinux
 # What follows is a hackish patch for an older lzma image. It was updated 
 # in a wrong way to a more current version and should be dead code as it stands.
