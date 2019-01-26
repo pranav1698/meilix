@@ -164,6 +164,7 @@ sed -i 's/Kubuntu/meilix/' image/.disk/info
 ls image/boot/grub
 [ -f image/boot/grub/grub.cfg ] && cat image/boot/grub/grub.cfg
 sed -i 's/Lubuntu/Meilix/' image/boot/grub/grub.cfg && cat image/boot/grub/grub.cfg
+cat image/boot/grub/loopback.cfg
 
 sudo rm image/isolinux/back.jpg
 cp -Rf $TRAVIS_BUILD_DIR/back.jpg image/isolinux
