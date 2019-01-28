@@ -169,7 +169,6 @@ ls image/boot/grub
 sed -i 's/Lubuntu/Meilix/' image/isolinux/txt.cfg
 
 sudo rm image/isolinux/splash.png
-cat image/isolinux
 sudo cp -v $TRAVIS_BUILD_DIR/splash.png image/isolinux 
 
 # What follows is a hackish patch for an older lzma image. It was updated 
