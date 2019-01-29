@@ -173,7 +173,7 @@ sed -i 's/Lubuntu/Meilix/' image/isolinux/txt.cfg
 
 sudo rm image/isolinux/splash.png
 sudo cp -v $TRAVIS_BUILD_DIR/splash.png image/isolinux 
-
+sudo cp -v image/isolinux/splash.png chroot
 # What follows is a hackish patch for an older lzma image. It was updated 
 # in a wrong way to a more current version and should be dead code as it stands.
 # We replace by "newversion" that could also be "release".
