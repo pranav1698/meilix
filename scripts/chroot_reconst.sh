@@ -85,14 +85,7 @@ rm /usr/share/applications/audacious.desktop
 # after Xenial one could also use apt install ./package
 dpkg -i plymouth-theme-meilix-text_1.0-2_all.deb; apt-get -qq -y -f install; dpkg -i plymouth-theme-meilix-text_1.0-2_all.deb
 dpkg -i plymouth-theme-meilix-logo_1.0-2_all.deb
-<<<<<<< HEAD
-
-# screen-dimming turns off always
-echo -ne "\033[9;0]" >> /etc/issue
-setterm -blank 0 >> /etc/issue
-=======
 dpkg -i meilix-default-theme_1.0-2_all.deb
->>>>>>> origin
 
 # Remove the "LXQT about" entry from the menu
 # /usr/share/applications/lxqt-about.desktop

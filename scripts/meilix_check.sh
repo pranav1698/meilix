@@ -52,6 +52,9 @@ ls /usr/share/plymouth/themes # show us which themes we have
 ls /usr/share/plymouth/themes/meilix-logo/
 ls -l |grep .plymouth
 
+# Solving the network problem
+[ -f /etc/network/interfaces] && /etc/network/interfaces
+[ -f /etc/resolv.conf ] && /etc/resolve.conf
 
 # startup 
 ls /usr/share/xsessions/  
