@@ -125,7 +125,7 @@ sudo umount -lfr chroot/dev
 echo $0: Preparing image...
 
 # Clean leftovers in the image directory
-[ -d image ] && sudo /bin/rm -r image
+#[ -d image ] && sudo /bin/rm -r image
 
 # Extract a new image folder
 # lzma file is a zip compressed live cd image (without squasfs content)
@@ -133,7 +133,7 @@ echo $0: Preparing image...
 #tar image-${arch}.tar.lzma
 # -> taking the standard image image-${arch}.tar.lzma files does not work
 #    anymore
-tar xvvf image-amd64.tar.lzma
+#tar xvvf image-amd64.tar.lzma
 
 # Copy the kernel from the "chroot" into the "image" folder for the LiveCD
 sudo \cp --verbose -rf chroot/boot/vmlinuz-**-generic image/casper/vmlinuz
