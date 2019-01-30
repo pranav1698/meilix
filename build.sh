@@ -136,7 +136,6 @@ echo $0: Preparing image...
 #tar image-${arch}.tar.lzma
 # -> taking the standard image image-${arch}.tar.lzma files does not work
 #    anymore
-tar xvvf image-amd64.tar.lzma
 
 # Copy the kernel from the "chroot" into the "image" folder for the LiveCD
 sudo \cp --verbose -rf chroot/boot/vmlinuz-**-generic image/casper/vmlinuz
@@ -167,14 +166,14 @@ sed -i 's/Ubuntu/meilix/' image/.disk/info && \
 sed -i 's/Kubuntu/meilix/' image/.disk/info
 # Lines above follow KISS to make it easy to grasp for you. Refactor at will.
 
-ls image/boot/grub
-[ -f image/isolinux/txt.cfg ] && cat image/isolinux/txt.cfg
-sed -i 's/Lubuntu/Meilix/' image/isolinux/txt.cfg
+#ls image/boot/grub
+#[ -f image/isolinux/txt.cfg ] && cat image/isolinux/txt.cfg
+#sed -i 's/Lubuntu/Meilix/' image/isolinux/txt.cfg
 
-sudo rm image/isolinux/splash.png
-sudo rm image/isolinux/splash.pcx
-sudo cp -v $TRAVIS_BUILD_DIR/splash.png image/isolinux 
-sudo cp -v image/isolinux/splash.png chroot
+#sudo rm image/isolinux/splash.png
+#sudo rm image/isolinux/splash.pcx
+#sudo cp -v $TRAVIS_BUILD_DIR/splash.png image/isolinux 
+#sudo cp -v image/isolinux/splash.png chroot
 # What follows is a hackish patch for an older lzma image. It was updated 
 # in a wrong way to a more current version and should be dead code as it stands.
 # We replace by "newversion" that could also be "release".
