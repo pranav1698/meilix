@@ -70,6 +70,7 @@ initramfs-extract() {
 [ -f plymouth-meilix-logo_1.0-2_all.deb ] && rm plymouth-meilix-logo_1.0-2_all.deb
 [ -f plymouth-meilix-text_1.0-2_all.deb ] && rm plymouth-meilix-text_1.0-2_all.deb
 [ -f meilix-default-theme_1.0-2_all.deb ] && rm meilix-default-theme_1.0-2_all.deb
+[ -f systemlock_0.1-1_all.deb ] && rm systemlock_0.1-1_all.deb
 chmod +x ./scripts/debuild.sh
 ./scripts/debuild.sh
 
