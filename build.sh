@@ -128,7 +128,7 @@ sudo umount -lfr chroot/dev
 echo $0: Preparing image...
 
 # Clean leftovers in the image directory
-[ -d image ] && sudo /bin/rm -r image
+# [ -d image ] && sudo /bin/rm -r image
 
 # Extract a new image folder
 # lzma file is a zip compressed live cd image (without squasfs content)
