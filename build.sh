@@ -26,7 +26,7 @@ datafiles="image-${arch}.tar.lzma sources.${release}.list"
 # Necessary development tool packages to be installed on build host
 devtools="debootstrap genisoimage p7zip-full squashfs-tools ubuntu-dev-tools"
 
-echo $TRAVIS_TAG
+echo $TRAVIS_SCRIPT
 
 # Make sure we have the data files we need
 for i in $datafiles
