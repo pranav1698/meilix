@@ -166,9 +166,14 @@ sed -i 's/Ubuntu/meilix/' image/.disk/info && \
 sed -i 's/Kubuntu/meilix/' image/.disk/info
 # Lines above follow KISS to make it easy to grasp for you. Refactor at will.
 
+<<<<<<< HEAD
 #ls image/boot/grub
 #[ -f image/isolinux/txt.cfg ] && cat image/isolinux/txt.cfg
 #sed -i 's/Lubuntu/Meilix/' image/isolinux/txt.cfg
+=======
+[ -f image/isolinux/txt.cfg ] && cat image/isolinux/txt.cfg
+sed -i 's/Lubuntu/Meilix/' image/isolinux/txt.cfg 
+>>>>>>> origin
 
 #sudo rm image/isolinux/splash.png
 #sudo rm image/isolinux/splash.pcx
