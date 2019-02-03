@@ -26,7 +26,7 @@ datafiles="image-${arch}.tar.lzma sources.${release}.list"
 # Necessary development tool packages to be installed on build host
 devtools="debootstrap genisoimage p7zip-full squashfs-tools ubuntu-dev-tools"
 
-if [ "$TRAVIS_SCRIPT" == ""]
+if [ "$TRAVIS_TAG" == ""]
 then
   echo "pranav"
 fi
