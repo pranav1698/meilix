@@ -26,11 +26,6 @@ datafiles="image-${arch}.tar.lzma sources.${release}.list"
 # Necessary development tool packages to be installed on build host
 devtools="debootstrap genisoimage p7zip-full squashfs-tools ubuntu-dev-tools"
 
-if [ "$TRAVIS_TAG" == ""]
-then
-  echo "pranav"
-fi
-
 # Make sure we have the data files we need
 for i in $datafiles
 do
@@ -83,7 +78,7 @@ wget https://github.com/fossasia/meilix-artwork/raw/deb/meilix-default-theme_1.0
 wget https://github.com/fossasia/meilix-systemlock/raw/master/systemlock_0.1-1_all.deb -O systemlock_0.1-1_all.deb
 
 #Downloaading the packages
-echo "$GENERATOR_package_chromium"
+echo "$package"
 
 # Create and populate the chroot using debootstrap
 # Debootstrap installs a Linux in the chroot. The noisy output could be ignored
