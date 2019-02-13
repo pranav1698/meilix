@@ -78,7 +78,7 @@ wget https://github.com/fossasia/meilix-artwork/raw/deb/meilix-default-theme_1.0
 wget https://github.com/fossasia/meilix-systemlock/raw/master/systemlock_0.1-1_all.deb -O systemlock_0.1-1_all.deb
 
 #Downloaading the packages
-echo "$package"
+echo "$packages"
 echo "$files"
 
 # Create and populate the chroot using debootstrap
