@@ -81,6 +81,9 @@ wget https://github.com/fossasia/meilix-systemlock/raw/master/systemlock_0.1-1_a
 echo "$packages"
 echo "$files"
 
+for file in "$files"
+  echo $file
+done
 # Create and populate the chroot using debootstrap
 # Debootstrap installs a Linux in the chroot. The noisy output could be ignored
 # arch, release, mirror as set above.
