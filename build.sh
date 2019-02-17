@@ -79,10 +79,13 @@ wget https://github.com/fossasia/meilix-systemlock/raw/master/systemlock_0.1-1_a
 
 #Downloaading the packages
 echo "$packages"
-softwares=`echo $packages | jq '.[]'`
+softwares=`echo $packages | jq -r '.[]'`
 for SOFTWARE in $softwares
 do
-  echo $SOFTWARE
+  if [ "$SOFTWARE" == "chromium" ]
+  then
+    echo "hello"
+  fi
 done
 
 # Create and populate the chroot using debootstrap
