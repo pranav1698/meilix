@@ -7,7 +7,8 @@ echo "You have to add an authorization token to make it functional."
 sudo apt-get -qq -y install jq
 
 # Storing the response to a variable for future usage
-response=`curl https://api.github.com/repos/fossasia/meilix/releases | jq '.[] | .published_at, .id'`
+response=`curl https://api.github.com/repos/pranav1698/meilix/releases | jq '.[] | .published_at, .id'`
+echo $response
 
 # Sample response:
 #   response = 
@@ -42,7 +43,8 @@ for i in $response; do
                 delete=1
             else
                 echo "Release was made this month, trying to compare date"
-                day_count=`expr $current_day - published_day`
+                echo $current_day
+                day_count=`expr $current_day - $published_day`
                 if [ $day_count -gt 10 ]; then
                     echo "Release was made before more than 10 days, deleting:"
                     delete=1
@@ -55,7 +57,7 @@ for i in $response; do
     else # We get the id of the release as $i`s value here
         echo $i
         if [ $delete -eq 1 ]; then
-            curl -u "$UNAME":"$KEY" -X DELETE https://api.github.com/repos/fossasia/meilix/releases/$i
+            curl -u "$UNAME":"$KEY" -X DELETE https://api.github.com/repos/pranav1698/meilix/releases/$i
             delete=0
         fi
     fi
