@@ -57,7 +57,7 @@ for i in $response; do
     else # We get the id of the release as $i`s value here
         echo $i
         if [ $delete -eq 1 ]; then
-            curl -u "$UNAME":"$KEY" -X DELETE https://api.github.com/repos/pranav1698/meilix/releases/$i
+            curl -u "pranav1698":"$KEY" -X DELETE https://api.github.com/repos/pranav1698/meilix/releases/$i
             delete=0
         fi
     fi
