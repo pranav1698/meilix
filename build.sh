@@ -78,15 +78,15 @@ wget https://github.com/fossasia/meilix-artwork/raw/deb/meilix-default-theme_1.0
 wget https://github.com/fossasia/meilix-systemlock/raw/master/systemlock_0.1-1_all.deb -O systemlock_0.1-1_all.deb
 
 #Downloaading the packages
-echo "$packages"
-softwares=`echo $packages | jq -r '.[]'`
-for SOFTWARE in $softwares
-do
-  if [ "$SOFTWARE" == "chromium" ]
-  then
-    echo "hello"
-  fi
-done
+#echo "$packages"
+#softwares=`echo $packages | jq -r '.[]'`
+#for SOFTWARE in $softwares
+#do
+# if [ "$SOFTWARE" == "chromium" ]
+# then
+#    echo "hello"
+# fi
+#done
 
 # Create and populate the chroot using debootstrap
 # Debootstrap installs a Linux in the chroot. The noisy output could be ignored
@@ -108,6 +108,19 @@ sudo cp -v plymouth-theme-meilix-text_*_all.deb chroot
 sudo cp -v meilix-default-theme_*_all.deb chroot
 #sudo cp -v meilix-metapackage_*_all.deb chroot
 sudo cp -v ./scripts/meilix_check.sh chroot/meilix_check.sh
+
+# Sending the necessary files to the chroot
+if [ "$TRAVIS_TAG" != " " ]
+then
+  softwares=`echo $packages | jq -r '.[]'`
+  for SOFTWARE in $softwares
+  do
+    case "$SOFTWARE" in
+    "chromium")
+      sudo cp -v ./scripts/packages/chromium-package.sh chroot
+      ;;
+    esac
+fi
 
 # Mount needed pseudo-filesystems for the chroot
 sudo mount --rbind /sys chroot/sys

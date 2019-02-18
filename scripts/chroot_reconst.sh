@@ -69,8 +69,11 @@ echo "deb https://download.sublimetext.com/ apt/stable/" | tee /etc/apt/sources.
 apt-get -qq update
 apt-get -qq -y install sublime-text
 
-# Installing Chromium 
-apt-get -qq -y install chromium-browser
+# Installing related packages
+for FILE in ./*.sh
+do
+  echo "$FILE"
+done
 
 # Installing Firefox
 apt-get -qq -y install firefox
