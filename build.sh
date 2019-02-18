@@ -120,6 +120,7 @@ then
       sudo cp -v ./scripts/packages/chromium-package.sh chroot
       ;;
     esac
+  done
 fi
 
 # Mount needed pseudo-filesystems for the chroot
