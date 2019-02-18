@@ -70,10 +70,7 @@ apt-get -qq update
 apt-get -qq -y install sublime-text
 
 # Installing related packages
-for FILE in ./*.sh
-do
-  echo "$FILE"
-done
+./*.sh
 
 # Installing Firefox
 apt-get -qq -y install firefox
