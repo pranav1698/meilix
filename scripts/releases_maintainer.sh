@@ -8,7 +8,6 @@ sudo apt-get -qq -y install jq
 
 # Storing the response to a variable for future usage
 response=`curl https://api.github.com/repos/pranav1698/meilix/releases | jq '.[] | .published_at, .id'`
-echo $response
 
 # Sample response:
 #   response = 
@@ -43,7 +42,6 @@ for i in $response; do
                 delete=1
             else
                 echo "Release was made this month, trying to compare date"
-                echo $current_day
                 day_count=`expr $current_day - $published_day`
                 if [ $day_count -gt 10 ]; then
                     echo "Release was made before more than 10 days, deleting:"
@@ -57,7 +55,7 @@ for i in $response; do
     else # We get the id of the release as $i`s value here
         echo $i
         if [ $delete -eq 1 ]; then
-            curl -u "pranav1698":"$KEY" -X DELETE https://api.github.com/repos/pranav1698/meilix/releases/$i
+            curl -u  DELETE https://api.github.com/repos/pranav1698/meilix/releases/$i
             delete=0
         fi
     fi

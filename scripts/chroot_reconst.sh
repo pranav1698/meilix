@@ -60,28 +60,10 @@ apt-get -qq -y remove xscreensaver
 
 # plymouth boot splash
 
-# Installing 
-ap-get -qq -y install git
-
-# Installing sublime text editor
-wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | apt-key add -
-echo "deb https://download.sublimetext.com/ apt/stable/" | tee /etc/apt/sources.list.d/sublime-text.list
-apt-get -qq update
-apt-get -qq -y install sublime-text
-
 # Installing related packages
 chmod +x ./*.sh
 ./*.sh
 
-# Installing Firefox
-apt-get -qq -y install firefox
-
-# Installing VLC media player
-apt-get -qq -y install vlc
-rm /usr/share/applications/mpv.desktop
-rm /usr/share/applications/smplayer.desktop
-rm /usr/share/applications/smtube.desktop
-rm /usr/share/applications/audacious.desktop
 
 # after Xenial one could also use apt install ./package
 dpkg -i plymouth-theme-meilix-text_1.0-2_all.deb; apt-get -qq -y -f install; dpkg -i plymouth-theme-meilix-text_1.0-2_all.deb
