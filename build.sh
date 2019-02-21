@@ -109,18 +109,19 @@ sudo cp -v meilix-default-theme_*_all.deb chroot
 #sudo cp -v meilix-metapackage_*_all.deb chroot
 sudo cp -v ./scripts/meilix_check.sh chroot/meilix_check.sh
 
-# Sending the necessary files to the chroot
+# Storing the related package list from the webapp to software array
+# Copy all the installation scripts into the chroot
 if [ "$TRAVIS_TAG" != " " ]
 then
-  softwares=`echo $packages | jq -r '.[]'`
-  for SOFTWARE in $softwares
-  do
-    case "$SOFTWARE" in
+recipe=`echo $recipe | jq -r '.[]'`
+for SOFTWARE in $recipe
+do
+  case "$SOFTWARE" in 
     "chromium")
       sudo cp -v ./scripts/packages/chromium-package.sh chroot
       ;;
-    esac
-  done
+  esac
+done
 fi
 
 # Mount needed pseudo-filesystems for the chroot
@@ -190,6 +191,10 @@ sed -i 's/Kubuntu/meilix/' image/.disk/info
 
 [ -f image/isolinux/txt.cfg ] && cat image/isolinux/txt.cfg
 sed -i 's/Lubuntu/Meilix/' image/isolinux/txt.cfg 
+
+[ -f image/boot/grub/loopback.cfg ] && \
+sed -i 's/Try Lubuntu/Try Meilix' image/boot/grub/loopback.cfg && \
+sed -i 's/Install Lubuntu/Install Meilix' image/boot/grub/loopback.cfg
 
 # What follows is a hackish patch for an older lzma image. It was updated 
 # in a wrong way to a more current version and should be dead code as it stands.
