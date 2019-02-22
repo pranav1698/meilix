@@ -113,7 +113,6 @@ sudo cp -v ./scripts/meilix_check.sh chroot/meilix_check.sh
 # Copy all the installation scripts into the chroot
 if [ "$TRAVIS_TAG" != " " ]
 then
-echo $files
 recipe=`echo $recipe | jq -r '.[]'`
 for SOFTWARE in $recipe
 do
