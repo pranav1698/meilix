@@ -78,11 +78,11 @@ wget https://github.com/fossasia/meilix-artwork/raw/deb/meilix-default-theme_1.0
 wget https://github.com/fossasia/meilix-systemlock/raw/master/systemlock_0.1-1_all.deb -O systemlock_0.1-1_all.deb
 
 # Condition for 32bit or 64bit support
-if [ "$TRAVIS_TAG" != " " ]
-then
-  arch=${1:-"$processor"}
-fi
-echo "$arch"
+#if [ "$TRAVIS_TAG" != " " ]
+#then
+#  arch=${1:-"$processor"}
+#fi
+#echo "$arch"
 
 # Create and populate the chroot using debootstrap
 # Debootstrap installs a Linux in the chroot. The noisy output could be ignored
