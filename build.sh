@@ -3,7 +3,7 @@
 # Author: members of the meilix Team 
 # Based on HOWTO information by Julien Lavergne <gilir@ubuntu.com>
 
-set -eux				# Be strict
+set -x				# Be strict
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -12,6 +12,13 @@ export LANGUAGE=en_US.UTF-8
 
 # Arch to build ISO for, i386 or amd64
 arch=${1:-amd64}
+# Condition for 32bit or 64bit support
+if [ "$TRAVIS_TAG" != " " ]
+then
+  arch=${1:-"$processor"}
+fi
+echo "$arch"
+
 # Ubuntu mirror to use
 mirror=${2:-"http://archive.ubuntu.com/ubuntu/"}
 # Ubuntu release used as a base by debootstrap, check if it works with the provided lzma image.
@@ -76,13 +83,6 @@ wget https://github.com/fossasia/meilix-artwork/raw/deb/plymouth-theme-meilix-lo
 wget https://github.com/fossasia/meilix-artwork/raw/deb/plymouth-theme-meilix-text_1.0-2_all.deb -O plymouth-theme-meilix-text_1.0-2_all.deb
 wget https://github.com/fossasia/meilix-artwork/raw/deb/meilix-default-theme_1.0-2_all.deb -O meilix-default-theme_1.0-2_all.deb
 wget https://github.com/fossasia/meilix-systemlock/raw/master/systemlock_0.1-1_all.deb -O systemlock_0.1-1_all.deb
-
-# Condition for 32bit or 64bit support
-if [ "$TRAVIS_TAG" != " " ]
-then
-  arch=${1:-"$processor"}
-fi
-echo "$arch"
 
 # Create and populate the chroot using debootstrap
 # Debootstrap installs a Linux in the chroot. The noisy output could be ignored
