@@ -107,7 +107,7 @@ sudo cp -v ./scripts/meilix_check.sh chroot/meilix_check.sh
 
 # Storing the related package list from the webapp to software array
 # Copy all the installation scripts into the chroot
-if [ "$TRAVIS_TAG" != ' ' ]
+if [ "$TRAVIS_TAG" != "" ];
 then
 recipe=`echo $recipe | jq -r '.[]'`
 for SOFTWARE in $recipe
