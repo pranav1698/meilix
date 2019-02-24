@@ -3,7 +3,7 @@
 # Author: members of the meilix Team 
 # Based on HOWTO information by Julien Lavergne <gilir@ubuntu.com>
 
-set -x				# Be strict
+set -eux				# Be strict
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -13,7 +13,7 @@ export LANGUAGE=en_US.UTF-8
 # Arch to build ISO for, i386 or amd64
 arch=${1:-amd64}
 # Condition for 32bit or 64bit support
-if [ "$TRAVIS_TAG" != " " ]
+if [ $TRAVIS_TAG != " " ]
 then
   arch=${1:-"$processor"}
 fi
