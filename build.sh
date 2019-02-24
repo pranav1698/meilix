@@ -13,7 +13,7 @@ export LANGUAGE=en_US.UTF-8
 # Arch to build ISO for, i386 or amd64
 arch=${1:-amd64}
 # Condition for 32bit or 64bit support
-if [ "$TRAVIS_TAG" != " " ]
+if [ '$TRAVIS_TAG' != ' ' ]
 then
   arch=${1:-"$processor"}
 fi
@@ -107,7 +107,7 @@ sudo cp -v ./scripts/meilix_check.sh chroot/meilix_check.sh
 
 # Storing the related package list from the webapp to software array
 # Copy all the installation scripts into the chroot
-if [ "$TRAVIS_TAG" != " " ]
+if [ '$TRAVIS_TAG' != '' ]
 then
 recipe=`echo $recipe | jq -r '.[]'`
 for SOFTWARE in $recipe
