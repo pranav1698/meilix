@@ -19,6 +19,7 @@ then
 fi
 echo "$arch"
 
+
 # Ubuntu mirror to use
 mirror=${2:-"http://archive.ubuntu.com/ubuntu/"}
 # Ubuntu release used as a base by debootstrap, check if it works with the provided lzma image.
