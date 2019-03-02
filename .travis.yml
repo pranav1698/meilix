@@ -27,17 +27,12 @@ dist: xenial
 git:
   depth: 22
 
-before_script: 
-  - sudo locale-gen "en_US.UTF-8"
-  - sudo dpkg-reconfigure locales
-
 script:
   - export LC_ALL="en_US.UTF-8"
   - export LANG="en_US.UTF-8"
   - export LANGUAGE="en_US.UTF-8"
-  - sudo echo 'LANGUAGE="en_US.UTF-8"' >> /etc/default/locale
-  - sudo echo 'LC_ALL="en_US.UTF-8"' >> /etc/default/locale
-  - sudo echo 'LANG="en_US.UTF-8"' >> /etc/default/locale
+  - locale-gen en_US.UTF-8
+  - dpkg-reconfigure locales
   - chmod +x ./build.sh
   - ./build.sh |& tee log.txt
 
