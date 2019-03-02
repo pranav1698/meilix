@@ -28,7 +28,7 @@ git:
   depth: 22
 
 before_script: 
-  - sudo loacale_gen "en_US.UTF-8"
+  - sudo loacale-gen "en_US.UTF-8"
   - sudo dpkg-reconfigure locales
 
 script:
