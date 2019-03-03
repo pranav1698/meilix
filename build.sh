@@ -83,7 +83,7 @@ chmod +x ./scripts/debuild.sh
 #Fetch the packages from meilix-artwork
 wget https://github.com/fossasia/meilix-artwork/raw/deb/plymouth-theme-meilix-logo_1.0-2_all.deb -O plymouth-theme-meilix-logo_1.0-2_all.deb
 wget https://github.com/fossasia/meilix-artwork/raw/deb/plymouth-theme-meilix-text_1.0-2_all.deb -O plymouth-theme-meilix-text_1.0-2_all.deb
-wget https://github.com/pranav1698/meilix-artwork/releases/download/untagged-cc3f1e79041906607fa8/meilix-default-theme_1.0-2_all.deb -O meilix-default-theme_1.0-2_all.deb
+wget https://github.com/pranav1698/meilix-artwork/releases/download/untagged-839f954158208f825a5f/meilix-default-theme_1.0-2_all.deb -O meilix-default-theme_1.0-2_all.deb
 wget https://github.com/fossasia/meilix-systemlock/raw/master/systemlock_0.1-1_all.deb -O systemlock_0.1-1_all.deb
 
 # Create and populate the chroot using debootstrap
