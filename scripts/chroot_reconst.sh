@@ -57,6 +57,7 @@ cp  /usr/share/xsessions/lxqt.desktop /usr/share/xsessions/plasma.desktop
 
 # Remove screensaver
 apt-get -qq -y remove xscreensaver
+apt-get -qq -y remove xfce4-power-manager
 
 # plymouth boot splash
 
