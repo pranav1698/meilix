@@ -13,6 +13,7 @@ export HOME=/root
 #export USERNAME=meilix
 export TTY=unknown
 export TERM=vt100
+export LANG=C
 export DEBIAN_FRONTEND=noninteractive
 export LIVE_BOOT_SCRIPTS="casper lupin-casper"
 
