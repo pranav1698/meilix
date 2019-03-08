@@ -13,8 +13,10 @@ export HOME=/root
 #export USERNAME=meilix
 export TTY=unknown
 export TERM=vt100
+export LC_ALL="en_US.UTF-8"
+export LANG="en_US.UTF-8"
+export LANGUAGE="en_US.UTF-8" 
 export DEBIAN_FRONTEND=noninteractive
-export LANG=C
 export LIVE_BOOT_SCRIPTS="casper lupin-casper"
 
 sudo echo 'LANGUAGE="en_US.UTF-8"' >> /etc/default/locale
