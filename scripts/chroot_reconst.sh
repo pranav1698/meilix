@@ -16,7 +16,13 @@ export TERM=vt100
 export DEBIAN_FRONTEND=noninteractive
 export LANG=C
 export LIVE_BOOT_SCRIPTS="casper lupin-casper"
+export LC_ALL="en_US.UTF-8"
+export LANG="en_US.UTF-8"
+export LANGUAGE="en_US.UTF-8"
 
+sudo locale-gen en_US.UTF-8
+sudo dpkg-reconfigure locales
+  
 # To allow a few apps using upstart to install correctly. JM 2011-02-21
 dpkg-divert --local --rename --add /sbin/initctl
 ln -s /bin/true /sbin/initctl
