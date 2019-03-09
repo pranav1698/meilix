@@ -46,44 +46,27 @@ cat /etc/xdg/pcmanfm-qt/lxqt/settings.conf
 cat /usr/share/xsessions/lxqt.desktop
 ls /usr/share/lxqt
 
-# Plymouth themes
-ls /usr/share/plymouth/themes # show us which themes we have
-# show us the plymouth meilix-logo folder
-ls /usr/share/plymouth/themes/meilix-logo/
-ls -l |grep .plymouth
-
 
 # startup 
 ls /usr/share/xsessions/  
-cat /usr/share/xsessions/lxqt.desktop
-ls /usr/local/share/xsessions
 
 # Do lxsession files exist?
 ls /usr/bin/lx*
 
-# Just for Test purposes
-
-ls conf
-#cat conf/arch.conf
-#cat conf/uuid.conf
-#cat conf/initramfs.conf
-#cat conf/conf.d
-#cat conf/modules
-
 ls /usr/share/xsessions/ 
 echo passphrase section
-cat /usr/share/initramfs-tools/scripts/casper
-ls /usr/share/initramfs-tools/scripts/casper-bottom/
+# cat /usr/share/initramfs-tools/scripts/casper
+# ls /usr/share/initramfs-tools/scripts/casper-bottom/
 less /etc/casper.conf
 
-less /usr/share/initramfs-tools/scripts/casper-bottom/25adduser
-less /usr/share/initramfs-tools/scripts/casper-bottom/24preseed
-cat /usr/share/initramfs-tools/scripts/casper-bottom/15autologin
+# less /usr/share/initramfs-tools/scripts/casper-bottom/25adduser
+# less /usr/share/initramfs-tools/scripts/casper-bottom/24preseed
+# cat /usr/share/initramfs-tools/scripts/casper-bottom/15autologin
 echo end passphrase section
 
 # passwords of user accounts 
-passwd --all -S
-cat /etc/passwd
+# passwd --all -S
+# cat /etc/passwd
 id -u
 
 
