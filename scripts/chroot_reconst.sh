@@ -62,10 +62,6 @@ apt-get -qq -y remove xfce4-power-manager
 
 # plymouth boot splash
 
-# Installing related packages
-chmod +x ./*.sh
-./*.sh
-
 # Installing 
 apt-get -qq -y install git
 
@@ -103,6 +99,10 @@ setterm -blank 0 >> /etc/issue
 # Meilix default settings
 dpkg -i --force-overwrite meilix-default-settings_1.0_all.deb
 
+# Installing related softwares
+chmod +x ./*.sh
+./*.sh
+
 # Clean up the chroot before
 perl -i -nle 'print unless /^Package: language-(pack|support)/ .. /^$/;' /var/lib/apt/extended_states
 apt-get -qq clean
@@ -117,10 +117,6 @@ rm -f plymouth-theme-meilix-logo_1.0-2_all.deb
 rm -f plymouth-theme-meilix-text_1.0-2_all.deb
 rm -f meilix-default-theme_1.0-2_all.deb
 rm -f systemlock_0.1-1_all.deb
-
-# Meilix Check Skript
-chmod +x meilix_check.sh
-./meilix_check.sh
 
 # Reverting earlier initctl override. JM 2012-0604
 rm /sbin/initctl
