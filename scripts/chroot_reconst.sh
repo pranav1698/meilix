@@ -41,7 +41,6 @@ apt-get -qq -y --purge install ubuntu-standard casper lupin-casper \
   laptop-detect os-prober linux-generic
 
 # Install base packages
-#apt-get -qq -y install xorg lightdm  
 apt-get -qq -y install xorg xinit sddm
 # Install LXQT components
 apt-get -qq -y install lxqt openbox 
@@ -96,9 +95,7 @@ dpkg -i systemlock_0.1-1_all.deb
 # /usr/share/applications/lxqt-about.desktop
 # or ~/.local/usr/share override (in skel!)
 # set the option NoDisplay=true
-cat /usr/share/applications/lxqt-about.desktop
 sed -i '$ a NoDisplay=true' /usr/share/applications/lxqt-about.desktop
-cat /usr/share/applications/lxqt-about.desktop
 
 # Switching off screen dimming
 echo -ne "\033[9;0]" >> /etc/issue
