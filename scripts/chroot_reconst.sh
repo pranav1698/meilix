@@ -111,10 +111,9 @@ dpkg -i --force-overwrite meilix-default-settings_1.0_all.deb
 if [ "$wallpaper_url" != "" ]
 then
       rm -rf /usr/share/lxqt/themes/meilix/wallpaper.jpg
-      echo filename=$(basename "$wallpaper_url")
-      wget -q "$wallpaper_url" -P /usr/share/lxqt/themes/
-      cat /etc/skel/.config/pcmanfm-qt/lxqt/settings.conf
-      sed -i "s/wallpaper.jpg/$filename/g" /etc/skel/.config/pcmanfm-qt/lxqt/settings.conf
+      filename=$(basename "$wallpaper_url")
+      wget -q "$wallpaper_url" -P /usr/share/lxqt/themes/meilix/
+      sed -i "s/wallpaper.jpg/'$filename'/g" /etc/skel/.config/pcmanfm-qt/lxqt/settings.conf
       cat /etc/skel/.config/pcmanfm-qt/lxqt/settings.conf
 fi
 
