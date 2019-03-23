@@ -113,8 +113,9 @@ then
       rm -rf /usr/share/lxqt/themes/meilix/wallpaper.jpg
       echo filename=$(basename "$wallpaper_url")
       wget -q "$wallpaper_url" -P /usr/share/lxqt/themes/
-      sed -i "s/wallpaper.jpg/$file/g" /etc/skel/.config/pcmanfm-qt/lxqt/settings.conf
-      cat /stc/skel/.config/pcmanfm-qt/lxqt/settings.conf
+      cat /etc/skel/.config/pcmanfm-qt/lxqt/settings.conf
+      sed -i "s/wallpaper.jpg/$filename/g" /etc/skel/.config/pcmanfm-qt/lxqt/settings.conf
+      cat /etc/skel/.config/pcmanfm-qt/lxqt/settings.conf
 fi
 
 # Clean up the chroot before
