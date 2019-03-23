@@ -110,7 +110,11 @@ dpkg -i --force-overwrite meilix-default-settings_1.0_all.deb
 #applying wallpaper sent by meilix-generator
 if [ "$wallpaper_url" != "" ]
 then
-      wget -q $wallpaper_url -O "/usr/share/lxqt/themes/meilix/wallpaper.jpg"
+      rm -rf /usr/share/lxqt/themes/meilix/wallpaper.jpg
+      echo filename=$(basename "$wallpaper_url")
+      wget -q "$wallpaper_url" -P /usr/share/lxqt/themes/
+      sed -i "s/wallpaper.jpg/$file/g" /etc/skel/.config/pcmanfm-qt/lxqt/settings.conf
+      cat /stc/skel/.config/pcmanfm-qt/lxqt/settings.conf
 fi
 
 # Clean up the chroot before
@@ -131,6 +135,6 @@ rm -f systemlock_0.1-1_all.deb
 # Reverting earlier initctl override. JM 2012-0604
 rm /sbin/initctl
 dpkg-divert --rename --remove /sbin/initctl
-
+sed -i "s/$var1/ZZ/g" "$file"
 exit
 EOF
