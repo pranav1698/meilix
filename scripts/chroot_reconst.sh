@@ -135,6 +135,5 @@ rm -f systemlock_0.1-1_all.deb
 # Reverting earlier initctl override. JM 2012-0604
 rm /sbin/initctl
 dpkg-divert --rename --remove /sbin/initctl
-sed -i "s/$var1/ZZ/g" "$file"
 exit
 EOF
