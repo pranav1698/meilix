@@ -153,9 +153,9 @@ echo $0: Preparing image...
 #    anymore
 if [ "$arch" == "amd64" ];
 then
-tar xvvf image-amd64.tar.lzma
+tar xf image-amd64.tar.lzma
 else 
-tar xvvf image-i386.tar.lzma
+tar xf image-i386.tar.lzma
 fi
 
 # Copy the kernel from the "chroot" into the "image" folder for the LiveCD
