@@ -216,7 +216,7 @@ sed -i 's/Install Lubuntu/Install Meilix' image/boot/grub/loopback.cfg
 
 # Create filesystem manifests
 cat image/casper/filesystem.manifest
-sudo chroot chroot dpkg-query -W --showformat='${Package} ${Version}\n' | sudo tee image/casper/filesystem.manifest
+sudo chroot chroot dpkg-query -W --showformat='${Package} ${Version}\n' | sudo dd of=image/casper/filesystem.manifest
 cat image/casper/filesystem.manifest
 sudo cp -v image/casper/filesystem.manifest image/casper/filesystem.manifest-desktop
 
