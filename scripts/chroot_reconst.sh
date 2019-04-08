@@ -87,7 +87,7 @@ rm /usr/share/applications/audacious.desktop
 # after Xenial one could also use apt install ./package
 dpkg -i plymouth-theme-meilix-text_1.0-2_all.deb; apt-get -qq -y -f install; dpkg -i plymouth-theme-meilix-text_1.0-2_all.deb
 dpkg -i plymouth-theme-meilix-logo_1.0-2_all.deb
-dpkg -i meilix-default-theme_1.0-2_all.deb
+dpkg -i meilix-default-dark-theme_1.0-2_all.deb
 dpkg -i systemlock_0.1-1_all.deb
 
 # Remove the "LXQT about" entry from the menu
