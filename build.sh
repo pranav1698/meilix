@@ -3,7 +3,8 @@
 # Author: members of the meilix Team
 # Based on HOWTO information by Julien Lavergne <gilir@ubuntu.com>
 
-set -eux				# Be strict
+set -eux        # Be strict
+
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
@@ -215,9 +216,7 @@ sed -i 's/Install Lubuntu/Install Meilix' image/boot/grub/loopback.cfg
 #done
 
 # Create filesystem manifests
-cat image/casper/filesystem.manifest
-sudo chroot chroot dpkg-query -W --showformat='${Package} ${Version}\n' > image/casper/filesystem.manifest
-cat image/casper/filesystem.manifest
+<sudo chroot chroot dpkg-query -W --showformat='${Package} ${Version}\n' | sudo dd of=image/casper/filesystem.manifest
 sudo cp -v image/casper/filesystem.manifest image/casper/filesystem.manifest-desktop
 
 # Remove packages from filesystem.manifest-desktop
