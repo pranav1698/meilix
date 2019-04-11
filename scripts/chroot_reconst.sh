@@ -60,7 +60,9 @@ cp  /usr/share/xsessions/lxqt.desktop /usr/share/xsessions/plasma.desktop
 
 # Remove screensaver
 apt-get -qq -y remove xscreensaver
-apt-get -qq -y remove xfce4-power-manager
+
+# Switching off the sleeping mode
+sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
 
 # plymouth boot splash
 
