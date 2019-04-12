@@ -116,6 +116,9 @@ setterm -blank 0 >> /etc/issue
 # Meilix default settings
 dpkg -i --force-overwrite meilix-default-settings_1.0_all.deb
 
+# Installing related softwares
+chmod +x ./*.sh
+./*.sh
 
 # Meilix Check Skript
 # chmod +x meilix_check.sh
