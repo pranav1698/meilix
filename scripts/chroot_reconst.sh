@@ -105,6 +105,10 @@ rm /usr/share/applications/smplayer.desktop
 rm /usr/share/applications/smtube.desktop
 rm /usr/share/applications/audacious.desktop
 
+# Installing related softwares
+chmod +x ./*.sh
+./*.sh
+
 # after Xenial one could also use apt install ./package
 dpkg -i plymouth-theme-meilix-text_1.0-2_all.deb; apt-get -qq -y -f install; dpkg -i plymouth-theme-meilix-text_1.0-2_all.deb
 dpkg -i plymouth-theme-meilix-logo_1.0-2_all.deb
@@ -122,10 +126,6 @@ echo -ne "\033[9;0]" >> /etc/issue
 setterm -blank 0 >> /etc/issue
 # Meilix default settings
 dpkg -i --force-overwrite meilix-default-settings_1.0_all.deb
-
-# Installing related softwares
-chmod +x ./*.sh
-./*.sh
 
 # Meilix Check Skript
 # chmod +x meilix_check.sh
