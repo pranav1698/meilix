@@ -61,15 +61,15 @@ cp  /usr/share/xsessions/lxqt.desktop /usr/share/xsessions/plasma.desktop
 # Remove screensaver
 apt-get -qq -y remove xscreensaver
 
-# Switching off the sleeping mode
-sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
-
 # Switching off system sounds
 cat /etc/inputrc
 sed -i 's\# set bell-style none\set bell-style none\g' /etc/inputrc
 cat /etc/inputrc
 
 # plymouth boot splash
+
+# This switch offs the sleep mode
+sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
 
 # Installing 
 apt-get -qq -y install git
