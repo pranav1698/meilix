@@ -64,6 +64,9 @@ apt-get -qq -y remove xscreensaver
 # Switching off the sleeping mode
 sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
 
+# Switching off system sounds
+sudo apt-get remove libcanberra-gtk-module
+
 # plymouth boot splash
 
 # Installing 
