@@ -67,6 +67,7 @@ sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.ta
 # Switching off system sounds
 cat /etc/inputrc
 sed -i 's\# set bell-style none\set bell-style none\g' /etc/inputrc
+cat /etc/inputrc
 
 # plymouth boot splash
 
