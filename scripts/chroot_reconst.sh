@@ -65,12 +65,7 @@ apt-get -qq -y remove xscreensaver
 sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
 
 # Switching off system sounds
-cat /etc/modprobe.d/blacklist
-sed -i '$ a silly speaker beep' /etc/modprobe.d/blacklist
-sed -i '$ a blacklist pcspkr' /etc/modprobe.d/blacklist
-cat /etc/modprobe.d/blacklists
-sudo rmmod pcspkr
-
+modprobe -r pcspkr
 # plymouth boot splash
 
 # Installing 
