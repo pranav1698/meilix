@@ -65,8 +65,8 @@ apt-get -qq -y remove xscreensaver
 sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
 
 # Switching off system sounds
-apt-get -qq -y install dconf-cli
-dconf write /org/gnome/desktop/sound/event-sounds "false"
+cat /etc/inputrc
+sed -i 's\# set bell-style none\set bell-style none\g' /etc/inputrc
 
 # plymouth boot splash
 
