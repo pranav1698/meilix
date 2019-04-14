@@ -66,6 +66,11 @@ cat /etc/inputrc
 sed -i 's\# set bell-style none\set bell-style none\g' /etc/inputrc
 cat /etc/inputrc
 
+# Switching off notifications
+cat /usr/share/kservices5/plasma-applet-org.kde.plasma.notifications.desktop
+sed -i '$ a NoDisplay=true' /usr/share/kservices5/plasma-applet-org.kde.plasma.notifications.desktop
+cat /usr/share/kservices5/plasma-applet-org.kde.plasma.notifications.desktop
+
 # plymouth boot splash
 
 # This switch offs the sleep mode
