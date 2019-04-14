@@ -62,14 +62,17 @@ cp  /usr/share/xsessions/lxqt.desktop /usr/share/xsessions/plasma.desktop
 apt-get -qq -y remove xscreensaver
 
 # Switching off system sounds
-cat /etc/inputrc
 sed -i 's\# set bell-style none\set bell-style none\g' /etc/inputrc
-cat /etc/inputrc
 
 # Switching off notifications
-cat /usr/share/kservices5/plasma-applet-org.kde.plasma.notifications.desktop
-sed -i '$ a NoDisplay=true' /usr/share/kservices5/plasma-applet-org.kde.plasma.notifications.desktop
-cat /usr/share/kservices5/plasma-applet-org.kde.plasma.notifications.desktop
+cat /etc/xdg/autostart/lxqt-notifications.desktop
+sed -i '$ a NoDisplay=true' /etc/xdg/autostart/lxqt-notifications.desktop
+cat /etc/xdg/autostart/lxqt-notifications.desktop
+
+# Switching off power management
+cat /etc/xdg/autostart/lxqt-powermanagement.desktop
+sed -i '$ a NoDisplay=true' /etc/xdg/autostart/lxqt-powermanagement.desktop
+cat /etc/xdg/autostart/lxqt-powermanagement.desktop
 
 # plymouth boot splash
 
