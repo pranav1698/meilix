@@ -65,14 +65,10 @@ apt-get -qq -y remove xscreensaver
 sed -i 's\# set bell-style none\set bell-style none\g' /etc/inputrc
 
 # Switching off notifications
-cat /etc/xdg/autostart/lxqt-notifications.desktop
-sed -i '$ a NoDisplay=true' /etc/xdg/autostart/lxqt-notifications.desktop
-cat /etc/xdg/autostart/lxqt-notifications.desktop
+rm /etc/xdg/autostart/lxqt-notifications.desktop
 
 # Switching off power management
-cat /etc/xdg/autostart/lxqt-powermanagement.desktop
-sed -i '$ a NoDisplay=true' /etc/xdg/autostart/lxqt-powermanagement.desktop
-cat /etc/xdg/autostart/lxqt-powermanagement.desktop
+rm /etc/xdg/autostart/lxqt-powermanagement.desktop
 
 # plymouth boot splash
 
