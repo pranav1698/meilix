@@ -64,6 +64,9 @@ apt-get -qq -y remove xscreensaver
 # This switch offs the sleep mode
 sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
 
+# This switches off notifications(autostart)
+rm /etc/xdg/autostart/lxqt-notifications.desktop
+
 # Installing 
 apt-get -qq -y install git
 
