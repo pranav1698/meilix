@@ -45,7 +45,7 @@ apt-get -qq -y --purge install ubuntu-standard casper lupin-casper \
 #apt-get -qq -y install xorg lightdm
 apt-get -qq -y install xorg xinit sddm
 # Install LXQT components
-apt-get install openbox pcmanfm-qt lxqt-admin lxqt-common lxqt-config lxqt-globalkeys \
+apt-get -qq -y install openbox pcmanfm-qt lxqt-admin lxqt-common lxqt-config lxqt-globalkeys \
  lxqt-notificationd lxqt-panel lxqt-policykit lxqt-powermanagement lxqt-qtplugin \
   lxqt-runner lxqt-session lxqt-sudo
 apt-get -f -qq install
