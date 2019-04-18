@@ -58,12 +58,6 @@ rm  /usr/share/xsessions/plasma.desktop
 # ugliest hack ever
 cp  /usr/share/xsessions/lxqt.desktop /usr/share/xsessions/plasma.desktop
 
-# Remove screensaver
-apt-get -qq -y remove xscreensaver
-
-# This switch offs the sleep mode
-sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
-
 # This switches off notifications(autostart)
 rm /etc/xdg/autostart/lxqt-notifications.desktop
 
@@ -111,12 +105,8 @@ dpkg -i systemlock_0.1-1_all.deb
 # set the option NoDisplay=true
 sed -i '$ a NoDisplay=true' /usr/share/applications/lxqt-about.desktop
 
-# Switching off screen dimming
-echo -ne "\033[9;0]" >> /etc/issue
-setterm -blank 0 >> /etc/issue
 # Meilix default settings
 dpkg -i --force-overwrite meilix-default-settings_1.0_all.deb
-
 
 # Meilix Check Skript
 # chmod +x meilix_check.sh
