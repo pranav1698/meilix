@@ -58,12 +58,8 @@ rm  /usr/share/xsessions/plasma.desktop
 # ugliest hack ever
 cp  /usr/share/xsessions/lxqt.desktop /usr/share/xsessions/plasma.desktop
 
-# This switches off notifications(autostart)
-rm /etc/xdg/autostart/lxqt-notifications.desktop
-
 # Installing 
 apt-get -qq -y install git
-
 
 # Installing sublime text editor
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | apt-key add -
