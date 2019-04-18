@@ -45,8 +45,7 @@ apt-get -qq -y --purge install ubuntu-standard casper lupin-casper \
 #apt-get -qq -y install xorg lightdm
 apt-get -qq -y install xorg xinit sddm
 # Install LXQT components
-apt-get -qq -y install openbox
-apt-get -qq -y install --no-install-recommends lxqt 
+apt-get -qq -y install lxqt-core lxqt-qtplugin
 apt-get -f -qq install
 update-alternatives --install /usr/bin/x-session-manager x-session-manager /usr/bin/startlxqt 140
 # ugly hack
