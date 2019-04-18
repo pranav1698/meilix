@@ -58,13 +58,6 @@ rm  /usr/share/xsessions/plasma.desktop
 # ugliest hack ever
 cp  /usr/share/xsessions/lxqt.desktop /usr/share/xsessions/plasma.desktop
 
-# Remove screensaver
-apt-get -qq -y remove xscreensaver
-
-# Switching off system sounds
-sed -i 's\# set bell-style none\set bell-style none\g' /etc/inputrc
-sed -i '$ a xset -b' /etc/X11/Xsession
-
 # Switching off notifications
 rm /etc/xdg/autostart/lxqt-notifications.desktop
 
@@ -72,9 +65,6 @@ rm /etc/xdg/autostart/lxqt-notifications.desktop
 rm /etc/xdg/autostart/lxqt-powermanagement.desktop
 
 # plymouth boot splash
-
-# This switch offs the sleep mode
-sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
 
 # Installing 
 apt-get -qq -y install git
@@ -124,9 +114,6 @@ dpkg -i systemlock_0.1-1_all.deb
 # set the option NoDisplay=true
 sed -i '$ a NoDisplay=true' /usr/share/applications/lxqt-about.desktop
 
-# Switching off screen dimming
-echo -ne "\033[9;0]" >> /etc/issue
-setterm -blank 0 >> /etc/issue
 # Meilix default settings
 dpkg -i --force-overwrite meilix-default-settings_1.0_all.deb
 
