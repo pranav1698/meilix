@@ -59,11 +59,11 @@ rm  /usr/share/xsessions/plasma.desktop
 cp  /usr/share/xsessions/lxqt.desktop /usr/share/xsessions/plasma.desktop
 
 # Switching off notifications
-rm /etc/xdg/autostart/lxqt-notifications.desktop
+#rm /etc/xdg/autostart/lxqt-notifications.desktop
 
 # Switching off power management
-rm /etc/xdg/autostart/lxqt-powermanagement.desktop
-
+#rm /etc/xdg/autostart/lxqt-powermanagement.desktop
+sed -i '$ a xset -dpms' /etc/X11/Xsession
 # plymouth boot splash
 
 # Installing 
