@@ -246,8 +246,6 @@ ISOFILE=meilix-${release}-$(date -u +%Y%m%d)-${arch}.iso
 sudo genisoimage -r -V "$IMAGE_NAME" -cache-inodes -J -l \
   -b isolinux/isolinux.bin -c isolinux/boot.cat \
   -no-emul-boot -boot-load-size 4 -boot-info-table \
-  --publisher "Meilix Packaging Team" \
-  --volset "Meilix Linux http://www.meilix.org" \
   -p "${DEBFULLNAME:-$USER} <${DEBEMAIL:-on host $(hostname --fqdn)}>" \
   -A "$IMAGE_NAME" \
   -m filesystem.squashfs \
